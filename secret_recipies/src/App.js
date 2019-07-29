@@ -7,6 +7,7 @@ import Registration from './components/Registration/Registration';
 import Footer from './components/Footer'
 import Login from './components/Login/Login'
 import HomePage from './components/Pages/homePage'
+import PrivacyPolicy from './components/Pages/PrivacyPolicy'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Switch>  
           <Route path="/home" component={HomePage} />
           <Route path="/registration" component={Registration} />
+          <Route path="/policy" component={PrivacyPolicy} />
       </Switch>
       <Login />
       <Footer />
