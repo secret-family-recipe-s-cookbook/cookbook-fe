@@ -29,6 +29,11 @@
   cursor: pointer;
 }
 
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
 /* Footer Styling */
 .footer {
   display: flex;
@@ -43,4 +48,18 @@
 
 .footerLinks:hover {
   cursor: pointer;
+}
+
+/* Registration Styling */
+.registration {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+}
+.signUpForm {
+  background: #FFFEFA;
+}
+
+.signUpImage {
+  height: auto;
+  width: 60%;
 }
