@@ -10,3 +10,5 @@ const Recipie = (props) => {
         </div>
     )
 } 
+
+export default Recipie;
