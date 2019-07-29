@@ -55,6 +55,10 @@
   align-items: center;
 }
 
+.footer a {
+  color: white;
+}
+
 .footerTitle {
   flex-grow: 2;
   margin-left: 2rem !important;
@@ -195,3 +199,67 @@
   top: 60%;
   left: 15%;
 }
+
+.recipe-content-one {
+  height: auto;
+  padding: 30px 0;
+}
+
+.recipe-content-two {
+  background: #FEF7EA;
+  height: auto;
+  padding: 30px 0;
+}
+
+.featured h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+.placeholder {
+  width: 300px;
+  height: auto;
+  
+}
+
+.temp-cards {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.temp-cards h3 {
+  font-size: 30px;
+}
+
+.temp-cards-rotd {
+  justify-content: center;
+  margin: auto;
+  width: auto;
+}
+.placeholder-rotd {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.rotd-text {
+  width: 40%;
+  margin-left: 40px;
+}
+
+.rotd-text h3 {
+  font-size: 40px;
+}
+
+.showcase h1 {
+  padding-left: 50px;
+}
+
+/* Privacy Page Styling */
+.privacy-page {
+  background: #FFFEFA;
+  padding: 3rem;
+}
+
