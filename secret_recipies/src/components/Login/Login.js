@@ -1,41 +1,50 @@
-import React, {useState} from "react";
-//import { Button, Modal } from 'semantic-ui-react'
+import React,{useState} from "react";
 
 
-const Login = (props) => {
-    const [show, setShow] = useState(false);
-    const [email, setEmail]= useState()
-    const [password, setPassword] = useState()
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
- 
-    return (
-        <div className="login-container">
-           {/* <Modal
-                trigger={<Button>Show Modal</Button>}
-                header='Reminder!'
-                content='Call Benjamin regarding the reports.'
-                actions={['Snooze', { key: 'done', content: 'Done', positive: true }]}
-            /> */}
-            
-        </div>
-    )
-}
+export default function Modal(props) {
+  const [name, setName] = useState({
+    username: "",
+    password: ""
+  });
 
-export default Login
+  // TASK: Add handler(s) to print form field on submit!
+  // STRETCH: Add multiple inputs w/ a single handler
 
-   {/* <form >
-                <h5>Sign In</h5>
-                <div className="input-field">
-                    <label>
-                        Email
-                        <input type="email" name="email" />
-                    </label>
-                    <label>
-                        Password
-                        <input type="password" name="password" />
-                    </label>
-                    <button>Login</button>
-                </div>
-            </form> */}
+  const changeHandler = event => {
+    event.preventDefault();
+    console.log(event.target.value);
+    setName({ ...name, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    console.log(name);
+  };
+  return (
+    <div >
+      <form className="login-modal" onSubmit={event => handleSubmit(event)}>
+        <label>
+          Username:
+          <input className ="input-modal"
+            type="text"
+            name="username"
+            onChange={changeHandler}
+            value={name.username}
+          />
+        </label>
+
+        <label>
+          Password:
+          <input className ="input-modal"
+            type="password"
+            name="password"
+            onChange={changeHandler}
+            value={name.password}
+          />
+        </label>
+
+        <button className="button-modal">Submit!</button>
+      </form>
+    </div>
+  );}
