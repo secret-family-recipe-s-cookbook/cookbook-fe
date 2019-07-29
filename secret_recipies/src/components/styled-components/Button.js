@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const ButtonContainer = styled.button`
-  background: #A64747;
+  background: #6E0000;
   border-radius: 6px;
   color: white;
   padding: .2rem 1rem;
+  transition: all .3s ease;
   &:hover {
-    background: #6E0000;
+    background: #A64747;
     border-radius: 6px;
     cursor: pointer;
     }
