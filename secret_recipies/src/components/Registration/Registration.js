@@ -1,4 +1,5 @@
 import React from "react";
+import { ButtonContainer } from "../styled-components/Button";
 
 function Registration () {
     let SignUpForm = React.createRef();
@@ -18,7 +19,7 @@ function Registration () {
         />           <div className="contactContainer">
         <h1 className="formTitle">Welcome to Secret Family Recipe Cookbook</h1>
             <form ref={SignUpForm} className="signUpForm">
-              <p>
+              <p className='signUpInputs'>
                 <label>First Name</label>
                 <input
                   type="text"
@@ -27,15 +28,15 @@ function Registration () {
                   required
                 />
               </p>
-              <p>
+              <p className='signUpInputs'>
                 <label>Last Name</label>
                 <input type="text" name="lastName" ref={signUpLastName} required/>
               </p>
-              <p>
+              <p className='signUpInputs'>
                 <label>Username</label>
                 <input type="text" name="userName" ref={signUpUserName} required/>
               </p>
-              <p>
+              <p className='signUpInputs'>
                 <label>Email</label>
                 <input
                   type="email"
@@ -44,16 +45,16 @@ function Registration () {
                   required
                 />
               </p>
-              <p>
+              <p className='signUpInputs'>
                 <label>Password</label>
                 <input type="text" name="password" ref={signUpPassword} required/>
               </p>
-              <p>
+              <p className='signUpInputs'>
                 <label>Confirm Password</label>
                 <input type="text" name="password" ref={signUpConfirmPassword} required/>
               </p>
               <p className="full">
-                <button>Submit</button>
+                <ButtonContainer className="signUpSubmit">Submit</ButtonContainer>
               </p>
             </form>
           </div>

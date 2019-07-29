@@ -57,6 +57,7 @@
 }
 .signUpForm {
   background: #FFFEFA;
+  font-size: .7rem;
 }
 
 .signUpImage {
@@ -65,7 +66,82 @@
 }
 
 .formTitle {
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  background: #FFFEFA;
+  padding: 1rem 0 2rem 0;
   text-align: center;
+}
+
+.signUpForm input {
+  background: #EFEFEF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+}
+
+.signUpInputs {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
+
+.signUpSubmit {
+  border: none;
+  margin: auto;
+}
+
+/* Home Page Styling */
+.home-page {
+  display: flex;
+  flex-direction: column;
+  width: 1440px;
+  margin: auto;
+}
+
+.hp-title {
+  width: 300px;
+  margin-left: 100px;
+  height: auto;
+  
+}
+
+.hp-title h1{
+  justify-content: flex-start;
+  font-size: 40px;
+}
+
+.no-recipe {
+  display: flex;
+  width: auto;
+  margin-top: 50px;
+  margin-left: 200px;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+}
+
+.no-recipe img {
+  padding-right: 30px;
+}
+
+.no-recipe h1 {
+  font-size: 40px;
+}
+
+.no-recipe h3 {
+  font-size: 30px;
+}
+
+.no-recipe button {
+  width: 90%;
+  height: auto;
+  padding: 10px 0;
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  background: #6E0000;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fff;
 }
