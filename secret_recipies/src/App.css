@@ -4,7 +4,7 @@
 /* Universal Styling */
 * {
   padding: 0;
-  margin: 0;
+  margin: 0 !important;
   box-sizing: border-box;
 }
 
@@ -13,16 +13,19 @@
   display: flex;
   background: #A64747;
   color: white;
-  font-family: 'Handlee', cursive;
+  align-items: center;
+  z-index: 5;
 }
 
 .title {
   flex-grow: 2;
-  margin-left: 2rem;
+  margin-left: 2rem !important;
+  font-family: 'Handlee', cursive;
 }
 
 .signIn {
-  margin-right: 2rem;
+  margin-right: 2rem !important;
+  font-family: 'Handlee', cursive;
 }
 
 .signIn:hover {
@@ -34,16 +37,31 @@
   top: 0;
 }
 
+.logo {
+  height: auto;
+  width: 3rem;
+  margin-left: 2rem !important;
+}
+
+.navbar a {
+  color: white;
+}
 /* Footer Styling */
 .footer {
   display: flex;
   background: #A64747;
   color: white;
   font-family: 'Roboto', sans-serif;
+  align-items: center;
+}
+
+.footerTitle {
+  flex-grow: 2;
+  margin-left: 2rem !important;
 }
 
 .footerLinks {
-  margin-right: 2rem;
+  margin-right: 2rem !important;
 }
 
 .footerLinks:hover {
@@ -58,6 +76,9 @@
 .signUpForm {
   background: #FFFEFA;
   font-size: .7rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .signUpImage {
@@ -67,7 +88,7 @@
 
 .formTitle {
   background: #FFFEFA;
-  padding: 1rem 0 2rem 0;
+  padding: 1rem 1rem 2rem 1rem;
   text-align: center;
 }
 
@@ -75,37 +96,36 @@
   background: #EFEFEF;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
   border: none;
+  padding:.3rem;
 }
 
 .signUpInputs {
   display: flex;
   flex-direction: column;
   width: 50%;
-  margin: 0 auto;
   padding-bottom: 1rem;
 }
 
 .signUpSubmit {
   border: none;
-  margin: auto;
+  margin-bottom: 1rem !important;
 }
 
 /* Home Page Styling */
-.home-page {
+.user-page {
   display: flex;
   flex-direction: column;
   width: 1440px;
-  margin: auto;
 }
 
-.hp-title {
+.user-title {
   width: 300px;
-  margin-left: 100px;
+  margin-left: 100px !important;
   height: auto;
   
 }
 
-.hp-title h1{
+.user-title h1{
   justify-content: flex-start;
   font-size: 40px;
 }
@@ -113,8 +133,8 @@
 .no-recipe {
   display: flex;
   width: auto;
-  margin-top: 50px;
-  margin-left: 200px;
+  margin-top: 50px !important;
+  margin-left: 200px !important;
   justify-content: flex-start;
   width: 100%;
   height: auto;
@@ -132,11 +152,11 @@
   font-size: 30px;
 }
 
-.no-recipe button {
-  width: 90%;
+.create-recipe {
+  width: 400px;
   height: auto;
   padding: 10px 0;
-  margin-top: 20px;
+  margin-top: 20px !important;
   font-size: 30px;
   font-weight: bold;
   background: #6E0000;
@@ -144,4 +164,34 @@
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #fff;
+}
+
+.top-content-image {
+  width: auto;
+  height: 600px;
+  background-image: url("https://imgur.com/KQ9Ppn0.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.top-content-text {
+  text-align: left;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-size: 26px;
+  color: white;
+}
+.top-content-text h1 {
+  font-family: 'Handlee', cursive;
+  font-size: 3rem;
+}
+
+.top-content-button {
+  position: absolute;
+  top: 60%;
+  left: 15%;
 }

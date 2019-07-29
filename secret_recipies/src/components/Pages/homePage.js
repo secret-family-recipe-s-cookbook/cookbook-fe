@@ -1,25 +1,21 @@
 import React from 'react';
-
+import { ButtonContainer } from "../styled-components/Button";
 
 function HomePage () {
     return(
         <div className='home-page'>
-            <div className='hp-title'>
-                <h1>My Recipes</h1>
-            </div>
-            <div className='no-recipe'>
-                <div>
-                    <img src='https://cdn3.vectorstock.com/i/thumb-large/32/82/frying-pan-glyph-icon-kitchen-and-cooking-fry-vector-20903282.jpg'></img>
+            <div className="top-content-image">
+                <div className="top-content-text">
+                    <h1>Create, Preserve, and</h1>
+                    <h1>Share Your Precious</h1>
+                    <h1>Family Recipes</h1>
+                </div>
+                <div className='top-content-button'>
+                    <ButtonContainer className='create-recipe'>Create a Recipe</ButtonContainer>
                 </div>
             </div>
-            <div>
-                <h1>Oh no!</h1>
-                <h3>user hasn't created a recipe yet</h3>
-                <button>Create a Recipe</button>
-            </div>
         </div>
-
     )
-}
+};
 
-export default HomePage
+export default HomePage;
