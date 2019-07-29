@@ -3,20 +3,21 @@ import React, {useState} from "react";
 
 
 const Login = (props) => {
-    const []= useState()
+    const [email, setEmail]= useState()
+    const [password, setPassword] = useState()
 
     return (
         <div className="login-container">
-            <form onSubmit={}>
+            <form >
                 <h5>Sign In</h5>
                 <div className="input-field">
                     <label>
                         Email
-                        <input type="email" name="email" onChange={}/>
+                        <input type="email" name="email" />
                     </label>
                     <label>
                         Password
-                        <input type="password" name="password" onChange={}/>
+                        <input type="password" name="password" />
                     </label>
                     <button>Login</button>
                 </div>

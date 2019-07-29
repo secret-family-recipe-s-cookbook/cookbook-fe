@@ -4,6 +4,7 @@ function Registration () {
     let SignUpForm = React.createRef();
     let signUpFirstName = React.createRef();
     let signUpLastName = React.createRef();
+    let signUpUserName = React.createRef();
     let signUpEmail = React.createRef();
     let signUpPassword = React.createRef();
     let signUpConfirmPassword = React.createRef();
@@ -29,6 +30,10 @@ function Registration () {
               <p>
                 <label>Last Name</label>
                 <input type="text" name="lastName" ref={signUpLastName} required/>
+              </p>
+              <p>
+                <label>Username</label>
+                <input type="text" name="userName" ref={signUpUserName} required/>
               </p>
               <p>
                 <label>Email</label>

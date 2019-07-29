@@ -4,7 +4,7 @@ import Navbar from './components/NavBar';
 import Recipies from './components/Cards/recipies';
 import Registration from './components/Registration/Registration';
 import Footer from './components/Footer'
-
+import Login from './components/Login/Login'
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
       <Navbar />
       {/* <Recipies/> */}
       <Registration />
+      <Login />
       <Footer />
     </div>
   );
