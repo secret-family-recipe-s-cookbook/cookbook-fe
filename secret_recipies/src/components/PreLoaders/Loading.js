@@ -6,18 +6,24 @@ export default class Loading extends Component {
     
         // Ref creation
         this.Loading = React.createRef();
+        console.log('Loading Screen',this.Loading)
       }
       componentDidMount() {
         const LoadingScreen = this.Loading.current;
-        window.onload = function() {
-          window.setTimeout(fadeout, 1500);
-        };
-    
-        function fadeout() {
-            LoadingScreen.style.display = "block"
-            ? (LoadingScreen.style.display = "none")
-            : (LoadingScreen.style.display = "block");
-        }
+
+        window.onclick = () => {
+            LoadingScreen.style.display = "block";
+            const run = () => {
+              fadeout();
+              this.props.call();
+              window.onclick = undefined;
+            };
+            window.setTimeout(run, 4000); //1 seconds
+          };
+      
+          function fadeout() {
+            LoadingScreen.style.display = "none";
+          }
     }
     render(){
     return (
