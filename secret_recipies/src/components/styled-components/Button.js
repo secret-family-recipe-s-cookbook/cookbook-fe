@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Global Styling for all buttons
 export const ButtonContainer = styled.button`
   background: #6E0000;
   border-radius: 6px;

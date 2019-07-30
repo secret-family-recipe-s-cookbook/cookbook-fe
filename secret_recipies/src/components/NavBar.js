@@ -4,8 +4,10 @@ import Login from "./Login/Login"
 import Tooltip from "@material-ui/core/Tooltip";
 
 function Navbar (props) {
+    // State
     const [isModalVisible, setIsModalVisible] = useState(false);
 
+    // Handlers
     function loginHandler() {
         window.scrollTo(0, 0);
         setIsModalVisible(!isModalVisible)

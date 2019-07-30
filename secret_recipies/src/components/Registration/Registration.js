@@ -1,7 +1,9 @@
 import React from "react";
 import { ButtonContainer } from "../styled-components/Button";
+import { addUser } from "../../store/actions";
 
 function Registration () {
+  // Refs
     let SignUpForm = React.createRef();
     let signUpFirstName = React.createRef();
     let signUpLastName = React.createRef();
@@ -16,8 +18,9 @@ function Registration () {
           src='https://i.imgur.com/IUXZArW.jpg'
           alt="Delicious Pasta"
           className="signUpImage"
-        />           <div className="contactContainer">
-        <h1 className="formTitle">Welcome to Secret Family Recipe Cookbook</h1>
+        />           
+        <div className="contactContainer">
+          <h1 className="formTitle">Welcome to Secret Family Recipe Cookbook</h1>
             <form ref={SignUpForm} className="signUpForm">
               <p className='signUpInputs'>
                 <label>First Name</label>

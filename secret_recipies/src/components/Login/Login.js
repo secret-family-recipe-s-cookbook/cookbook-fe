@@ -1,4 +1,7 @@
 import React, {useState} from "react";
+import  { login }  from '../../store/actions/index'
+import { withRouter } from "react-router-dom";
+import { connect } from 'react-redux';
 import { ButtonContainer } from "../styled-components/Button";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
@@ -7,7 +10,6 @@ const Login = (props) => {
         username: "",
         password: ""
       });
-    
       const changeHandler = event => {
         event.preventDefault();
         console.log(event.target.value);
@@ -16,9 +18,17 @@ const Login = (props) => {
     
       const handleSubmit = event => {
         event.preventDefault();
-        console.log(name);
       };
 
+      const login = e => {
+        e.preventDefault();
+        props.login(name.username, name.password).then(res => {
+          if(res) {
+            props.history.push('/protected');
+          }
+          console.log(props.history)
+        });
+      }
 
       if(!props.isModalVisible) {
         document.body.style.overflow = ""
@@ -38,7 +48,7 @@ const Login = (props) => {
                   type="text"
                   name="username"
                   onChange={changeHandler}
-                  value={name.username}
+                  value={name.usernameoremail}
                 />
               </label>
             </p>
@@ -55,7 +65,8 @@ const Login = (props) => {
               </label>
             </p>
 
-            <ButtonContainer className="button-modal">Login!</ButtonContainer>
+            <ButtonContainer className="button-modal" onClick={() => props.login()}>Login!</ButtonContainer>
+            <p className='forgotText'>Forgot username or password? Click here.</p>
           </form>
         </ClickAwayListener>
       </div>
@@ -63,4 +74,17 @@ const Login = (props) => {
       } 
      }
 
-export default Login
+     const mapStateToProps = state => {
+      return {
+        isloadingLOGIN: state.isloadingLOGIN,
+        successLOGIN: state.successLOGIN,
+        user: state.user
+      };
+    };
+    
+    export default withRouter(
+      connect(
+        mapStateToProps,
+        { login }
+      )(Login)
+    );
