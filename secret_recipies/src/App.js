@@ -4,12 +4,13 @@ import { Switch, Route } from "react-router-dom";
 import Navbar from './components/NavBar';
 import Recipies from './components/Cards/recipies';
 import Registration from './components/Registration/Registration';
-import Footer from './components/Footer'
-import HomePage from './components/Pages/homePage'
-import PrivacyPolicy from './components/Pages/PrivacyPolicy'
-import Terms from './components/Pages/Terms'
-import Loading from './components/PreLoaders/Loading'
-
+import Footer from './components/Footer';
+import HomePage from './components/Pages/homePage';
+import PrivacyPolicy from './components/Pages/PrivacyPolicy';
+import Terms from './components/Pages/Terms';
+import Loading from './components/PreLoaders/Loading';
+import PrivateRoute from './Utillities/authRouter';
+import UserPage from './components/Pages/userPage';
 
 function App() {
   const [showComponent, setShowComponent] = useState(false);
@@ -30,6 +31,7 @@ function App() {
           <Route path="/terms" component={Terms} />
           <Route path="/policy" component={PrivacyPolicy} />
           <Route path="/registration" component={Registration} />
+          <PrivateRoute path="/protected" component={UserPage} />
       </Switch>
       <Footer />
     </div>
