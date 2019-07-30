@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 
 function Terms () {
+    // Scrolls to the top of the page
     const scrollToTop = () => {
         window.scrollTo(0, 0);
     }
