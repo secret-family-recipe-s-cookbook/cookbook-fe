@@ -1,6 +1,7 @@
 import React from 'react';
 
 function PrivacyPolicy () {
+    // Privacy Policy Page
     return(
         <div className='privacy-page'>
             <h1>Privacy Policy of Secret Family Recipes Cookbook</h1><br />
