@@ -3,7 +3,8 @@ import {LOGIN_START,LOGIN_SUCCESS,LOGIN_FAILURE} from "../actions";
 const initialState = {
     isLoadingLOGIN:false,
     successLOGIN:false,
-    user:""
+    usernameoremail:"",
+    password:""
 };
 
 export const loginReducer = (state = initialState, action) => {
@@ -19,14 +20,16 @@ export const loginReducer = (state = initialState, action) => {
               ...state,
               isloadingLOGIN: false,
               successLOGIN: true,
-              user: action.payload
+              usernameoremail: action.payload,
+              password:action.payload
             };
           case LOGIN_FAILURE:
             return {
               ...state,
               isloadingLOGIN: false,
               successLOGIN: false,
-              user: ""
+              usernameoremail: "",
+              password:""
             };
       
           default:

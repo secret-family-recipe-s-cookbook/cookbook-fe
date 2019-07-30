@@ -6,8 +6,9 @@ import { ButtonContainer } from "../styled-components/Button";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 
 const Login = (props) => {
+    
     const [name, setName] = useState({
-        username: "",
+        usernameoremail: "",
         password: ""
       });
       const changeHandler = event => {
@@ -22,8 +23,9 @@ const Login = (props) => {
 
       const login = e => {
         e.preventDefault();
-        props.login(name.username, name.password).then(res => {
+        props.login(name.usernameoremail, name.password).then(res => {
           if(res) {
+            console.log('res',res)
             props.history.push('/protected');
           }
           console.log(props.history)
@@ -46,7 +48,7 @@ const Login = (props) => {
                 Username:
                 <input className ="input-modal"
                   type="text"
-                  name="username"
+                  name="usernameoremail"
                   onChange={changeHandler}
                   value={name.usernameoremail}
                 />
@@ -65,7 +67,7 @@ const Login = (props) => {
               </label>
             </p>
 
-            <ButtonContainer className="button-modal" onClick={() => props.login()}>Login!</ButtonContainer>
+            <ButtonContainer className="button-modal" onClick={login}>Login!</ButtonContainer>
             <p className='forgotText'>Forgot username or password? Click here.</p>
           </form>
         </ClickAwayListener>
@@ -78,7 +80,7 @@ const Login = (props) => {
       return {
         isloadingLOGIN: state.isloadingLOGIN,
         successLOGIN: state.successLOGIN,
-        user: state.user
+        usernameoremail: state.usernameoremail
       };
     };
     
