@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import Navbar from './components/NavBar';
@@ -8,12 +8,22 @@ import Footer from './components/Footer'
 import HomePage from './components/Pages/homePage'
 import PrivacyPolicy from './components/Pages/PrivacyPolicy'
 import Terms from './components/Pages/Terms'
+import Loading from './components/PreLoaders/Loading'
 
 
 function App() {
+  const [showComponent, setShowComponent] = useState(false);
+  
+  function _onButtonClick() {
+    setShowComponent(true);
+  }
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar showLoading={_onButtonClick} />
+      {showComponent ? (
+          <Loading call={() => setShowComponent(false)} />
+        ) : null}
       {/* <Recipies/> */}
       <Switch>  
           <Route exact path="/" component={HomePage} />

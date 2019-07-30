@@ -1,5 +1,13 @@
 {
+  "name": "recipieserver"
+  "version": "1.0.0",
+  "description": "REST API",
+  "main": "index.js",
+  "scripts": {
+    "json:server": "json-server --watch db.json"
+  },
   "dependencies": {
+    "json-server": "^0.15.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1"
   }
