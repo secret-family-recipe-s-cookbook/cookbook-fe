@@ -1,39 +1,31 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 
 function Terms () {
     return(
         <div className='terms-page'>
-            <h1>Privacy Policy of Secret Family Recipes Cookbook</h1><br />
-            <p>Secret Family Recipes Cookbook operates the Recipes website, which provides the SERVICE.<br /><br />
-            This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service, the Website Name website.<br /><br />
-            If you choose to use our Service, then you agree to the collection and use of information in relation with this policy. The Personal Information that we collect are used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.<br /><br />
-            The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at Website URL, unless otherwise defined in this Privacy Policy.</p><br />
-            <h1>Information Collection and Use</h1><br />
-            <p>For a better experience while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to your name, phone number, and postal address. The information that we collect will be used to contact or identify you.</p><br />
-            <h1>Log Data</h1><br />
-            <p>We want to inform you that whenever you visit our Service, we collect information that your browser sends to us that is called Log Data. This Log Data may include information such as your computer's Internet Protocol (“IP”) address, browser version, pages of our Service that you visit, the time and date of your visit, the time spent on those pages, and other statistics.</p><br />
-            <h1>Cookies</h1><br />
-            <p>Cookies are files with small amount of data that is commonly used an anonymous unique identifier. These are sent to your browser from the website that you visit and are stored on your computer's hard drive.<br /><br />
-            Our website uses these “cookies” to collection information and to improve our Service. You have the option to either accept or refuse these cookies, and know when a cookie is being sent to your computer. If you choose to refuse our cookies, you may not be able to use some portions of our Service.<br /><br /></p><br />
-            <h1>Service Providers</h1><br />
-            <p>We may employ third-party companies and individuals due to the following reasons:</p><br />
-            <ul>
-                <li>To facilitate our Service</li>
-                <li>To provide the Service on our behalf</li>
-                <li>To perform Service-related services</li>
-                <li>To assist us in analyzing how our Service is used</li>
-            </ul><br />
-            <p>We want to inform our Service users that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.</p><br />
-            <h1>Security</h1><br />
-            <p>We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.</p><br />
-            <h1>Links to Other Sites</h1><br />
-            <p>Our Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over, and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p><br />
-            <p>Children's Privacy</p><br />
-            <p>Our Services do not address anyone under the age of 13. We do not knowingly collect personal identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do necessary actions.</p><br />
-            <h1>Changes to This Privacy Policy</h1><br />
-            <p>We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately, after they are posted on this page.</p><br />
-            <h1>Contact Us</h1><br />
-            <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us.</p><br />
+            <h1>Secret Family Recipes Cookbook Terms of Service</h1><br />
+            <p>Please read these terms carefully before using Secret Family Recipes Cookbook.</p><br />
+            <h3>Conditions of Use</h3><br />
+            <p>We will provide their services to you, which are subject to the conditions stated below in this document. Every time you visit this website, use its services or make a purchase, you accept the following conditions. This is why we urge you to read them carefully.</p><br />
+            <h3>Privacy Policy</h3><br />
+            <p>Before you continue using our website we advise you to read our <NavLink to="/policy">privacy policy</NavLink> regarding our user data collection. It will help you better understand our practices.</p><br />
+            <h3>Copyright</h3><br />
+            <p>Content published on this website (digital downloads, images, texts, graphics, logos) is the property of Secret Family Recipes Cookbook and/or its content creators and protected by international copyright laws. The entire compilation of the content found on this website is the exclusive property of Secret Family Recipes Cookbook, with copyright authorship for this compilation by Secret Family Recipes Cookbook.</p><br />
+            <h3>Communications</h3><br />
+            <p>The entire communication with us is electronic. Every time you send us an email or visit our website, you are going to be communicating with us. You hereby consent to receive communications from us. If you subscribe to the news on our website, you are going to receive regular emails from us. We will continue to communicate with you by posting news and notices on our website and by sending you emails. You also agree that all notices, disclosures, agreements and other communications we provide to you electronically meet the legal requirements that such communications be in writing.</p><br />
+            <h3>Applicable Law</h3><br />
+            <p>By visiting this website, you agree that the laws of [your location], without regard to principles of conflict laws, will govern these terms of service, or any dispute of any sort that might come between Secret Family Recipes Cookbook and you, or its business partners and associates.</p><br />
+            <h3>Disputes</h3><br />
+            <p>Any dispute related in any way to your visit to this website or to products you purchase from us shall be arbitrated by state or federal court and you consent to exclusive jurisdiction and venue of such courts.</p><br />
+            <h3>Comments, Reviews, and Emails</h3><br />
+            <p>Visitors may post content as long as it is not obscene, illegal, defamatory, threatening, infringing of intellectual property rights, invasive of privacy or injurious in any other way to third parties. Content has to be free of software viruses, political campaign, and commercial solicitation.</p><br />
+            <p>We reserve all rights (but not the obligation) to remove and/or edit such content. When you post your content, you grant Secret Family Recipes Cookbook non-exclusive, royalty-free and irrevocable right to use, reproduce, publish, modify such content throughout the world in any media.</p><br />
+            <h3>License and Site Access</h3><br />
+            <p>We grant you a limited license to access and make personal use of this website. You are not allowed to download or modify it. This may be done only with written consent from us.</p><br />
+            <h3>User Account</h3><br />
+            <p>If you are an owner of an account on this website, you are solely responsible for maintaining the confidentiality of your private user details (username and password). You are responsible for all activities that occur under your account or password.</p><br />
+            <p>We reserve all rights to terminate accounts, edit or remove content and cancel orders in their sole discretion.</p><br />
         </div>
     )
 };
