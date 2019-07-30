@@ -8,6 +8,8 @@ import Footer from './components/Footer'
 import Login from './components/Login/Login'
 import HomePage from './components/Pages/homePage'
 import PrivacyPolicy from './components/Pages/PrivacyPolicy'
+import Terms from './components/Pages/Terms'
+
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
       {/* <Recipies/> */}
       <Switch>  
           <Route path="/home" component={HomePage} />
-          <Route path="/registration" component={Registration} />
+          <Route path="/terms" component={Terms} />
           <Route path="/policy" component={PrivacyPolicy} />
       </Switch>
       <Login />

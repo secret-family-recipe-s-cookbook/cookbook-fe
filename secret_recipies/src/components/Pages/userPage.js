@@ -3,7 +3,7 @@ import React from 'react';
 
 function UserPage () {
     return(
-        <div className='user-page'>
+        <div className='home-page'>
             <div className='user-title'>
                 <h1>My Recipes</h1>
             </div>
