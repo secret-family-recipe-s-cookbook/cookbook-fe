@@ -16,26 +16,25 @@ export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
 export const login = (usernameoremail, password) => dispatch => {
     dispatch({ type: LOGIN_START });
-    return 
-    axios
-      .post('https://lambda-cook-book.herokuapp.com/api/auth/login', {
+    return axiosWithAuth()
+      .post(`/auth/login`, {
         usernameoremail: usernameoremail,
         password: password
       })
       .then(res => {
-        console.log(res)
         localStorage.setItem('token',res.data.token);
         dispatch({ type: LOGIN_SUCCESS, payload: res.data });
         return true
       })
-      .catch(err => {
-        console.log(err)
+      .catch(res => {
+
         logout(callback => {
-          alert(err);
+          console.log(usernameoremail)
+          alert(res);
         });
         dispatch({
           type: LOGIN_FAILURE,
-          payload: err.data
+          payload: res.data
         });
       });
   };
