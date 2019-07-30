@@ -5,23 +5,8 @@ import { ButtonContainer } from "../styled-components/Button";
 
 
 function UserPage (props) {
-    const [data, setData] = useState({});
-
-    useEffect(() => {
-        axios
-            .get(
-                'https://lambda-cook-book.herokuapp.com/api'
-            )
-            .then(response => {
-                console.log(response.data);
-                setData(response.data);
-            })
-            .catch(error => {
-                console.log("error", error);
-            });
-    }, []);
-
-    if (!data) {
+    
+    if (!props.cards) {
       
     return(
         <div className='home-page'>
@@ -30,7 +15,7 @@ function UserPage (props) {
             </div>
             <div className='no-recipe'>
                 <div>
-            <img src='https://cdn3.vectorstock.com/i/thumb-large/32/82/frying-pan-glyph-icon-kitchen-and-cooking-fry-vector-20903282.jpg'></img>
+            <img src={process.env.PUBLIC_URL + "/pan.svg"} alt='' className='logo' />
             </div>
                 <div>
                     <h1>Oh no!</h1>
@@ -42,7 +27,7 @@ function UserPage (props) {
     )
 }
 
-const { recipe } = data;
+const { recipe } = props;
     return(
         <>
         <div className='my-recipes'>
@@ -51,7 +36,7 @@ const { recipe } = data;
             </div>
             <ButtonContainer className="signUpSubmit">Add Recipe</ButtonContainer>
         </div>
-        <Recipies data={recipe} />
+        <Recipies props={recipe} />
         </>
     )
 }
