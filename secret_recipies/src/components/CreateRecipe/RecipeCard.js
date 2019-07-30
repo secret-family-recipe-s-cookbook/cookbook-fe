@@ -20,3 +20,4 @@ const SavedRecipes = (props) => {
         </div>
     )
 }
+export default SavedRecipes;

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import RecipeCard from "./RecipeCard";
+import SavedRecipes from "./RecipeCard";
 import AddRecipeForm from "./AddRecipeForm";
 import { Route, NavLink } from "react-router-dom";
 
@@ -30,11 +30,11 @@ function DisplayRecipe() {
             <NavLink>Add Recipes</NavLink>
             <NavLink>My Recipes</NavLink>
             <Route path="/add" render={props => <Form {...props} submitRecipe = {addRecipe} />} />
-            <Route path="/recipes" render={props => recipes && recipes.map(recipe => <RecipeCard recipe={recipe} />)}/>
+            <Route path="/recipes" render={props => recipes && recipes.map(recipe => <SavedRecipes recipe={recipe} />)}/>
             <Route path="/edit/:id" 
                 render={props => {
                 recipes.find(recipe => recipe.id === props.match.params.id)
-                return <Form {...props} />
+                return <AddRecipeForm {...props} />
                 }}/>
         </div>
     )
