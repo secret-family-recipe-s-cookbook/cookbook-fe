@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Recipies from '../Cards/recipies';
 import { ButtonContainer } from "../styled-components/Button";
+import { Link } from 'react-router-dom';
 
 
 function UserPage (props) {
@@ -20,7 +21,7 @@ function UserPage (props) {
                 <div>
                     <h1>Oh no!</h1>
                     <h3>user hasn't created a recipe yet.</h3>
-                    <ButtonContainer className="signUpSubmit">Create a Recipe</ButtonContainer>
+                    <Link to={``}><ButtonContainer className="signUpSubmit">Create a Recipe</ButtonContainer></Link>
                 </div>
             </div>
         </div>
@@ -34,7 +35,7 @@ const { recipe } = props;
             <div className='hp-title'>       
                 <h1>My Recipes</h1>
             </div>
-            <ButtonContainer className="signUpSubmit">Add Recipe</ButtonContainer>
+            <Link to={``}><ButtonContainer className="signUpSubmit">Add Recipe</ButtonContainer></Link>
         </div>
         <Recipies props={recipe} />
         </>
