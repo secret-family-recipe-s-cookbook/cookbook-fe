@@ -11,6 +11,7 @@ import Terms from './components/Pages/Terms';
 import Loading from './components/PreLoaders/Loading';
 import PrivateRoute from './Utillities/authRouter';
 import UserPage from './components/Pages/userPage';
+import DisplayRecipe from './components/CreateRecipe'
 
 function App() {
   const [showComponent, setShowComponent] = useState(false);
@@ -31,6 +32,7 @@ function App() {
           <Route path="/terms" component={Terms} />
           <Route path="/policy" component={PrivacyPolicy} />
           <Route path="/registration" component={Registration} />
+          <Route path="/createrecipe" component={DisplayRecipe} />
           <PrivateRoute path="/protected" component={UserPage} />
       </Switch>
       <Footer />

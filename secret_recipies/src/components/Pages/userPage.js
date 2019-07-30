@@ -20,7 +20,7 @@ function UserPage (props) {
             </div>
                 <div>
                     <h1>Oh no!</h1>
-                    <h3>user hasn't created a recipe yet.</h3>
+                    <h3>{props.username} hasn't created a recipe yet.</h3>
                     <Link to={``}><ButtonContainer className="signUpSubmit">Create a Recipe</ButtonContainer></Link>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { ButtonContainer } from "../styled-components/Button";
+import { addUser } from "../../store/actions";
 
 function Registration () {
   // Refs

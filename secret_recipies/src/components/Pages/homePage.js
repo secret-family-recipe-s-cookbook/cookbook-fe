@@ -1,5 +1,6 @@
 import React from 'react';
 import { ButtonContainer } from "../styled-components/Button";
+import { Link } from 'react-router-dom';
 
 
 function HomePage () {
@@ -12,7 +13,7 @@ function HomePage () {
                     <h1>Family Recipes</h1>
                 </div>
                 <div className='top-content-button'>
-                    <ButtonContainer className='create-recipe'>Create a Recipe</ButtonContainer>
+                <Link to='/createrecipe'><ButtonContainer className='create-recipe'>Create a Recipe</ButtonContainer></Link>
                 </div>
             </div>
 

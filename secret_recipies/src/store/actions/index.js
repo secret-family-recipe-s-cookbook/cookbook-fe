@@ -14,16 +14,16 @@ export  const LOGIN_START ="LOGIN_START";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 
-export const login = (username, password) => dispatch => {
+export const login = (usernameoremail, password) => dispatch => {
     dispatch({ type: LOGIN_START });
     return axiosWithAuth()
       .post(`/auth/login`, {
-        username: username,
+        usernameoremail: usernameoremail,
         password: password
       })
       .then(res => {
         localStorage.setItem('token',res.data.token);
-        console.log(res.data.token);
+        console.log('res token',res.data.token);
         dispatch({ type: LOGIN_SUCCESS, payload: res.data });
         return true
       })
