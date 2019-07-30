@@ -12,13 +12,14 @@ export default class Loading extends Component {
         const LoadingScreen = this.Loading.current;
 
         window.onclick = () => {
-            LoadingScreen.style.display = "block";
+            LoadingScreen.style.display = "flex";
+            document.body.style.overflow = "hidden";
             const run = () => {
               fadeout();
               this.props.call();
               window.onclick = undefined;
             };
-            window.setTimeout(run, 4000); //1 seconds
+            window.setTimeout(run, 3000); //1 seconds
           };
       
           function fadeout() {

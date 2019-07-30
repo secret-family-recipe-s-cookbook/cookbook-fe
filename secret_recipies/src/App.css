@@ -380,11 +380,13 @@ font-weight: 900;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 .cookingLoading h1{
   padding-top: 4rem;
   font-family: 'Handlee', cursive;
   font-size: 6rem;
+  animation: pulse 2.5s linear infinite;
 }
 #cooking {
   position: relative;
