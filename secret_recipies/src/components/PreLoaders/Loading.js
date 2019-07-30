@@ -21,7 +21,7 @@ export default class Loading extends Component {
               this.props.call();
               window.onclick = undefined;
             };
-            window.setTimeout(run, 3000); //1 seconds
+            window.setTimeout(run, 3000); //3 seconds
           };
       
           function fadeout() {
@@ -31,6 +31,7 @@ export default class Loading extends Component {
     render(){
     return (
         <div ref={this.Loading} className='cookingLoading'>
+          {/* Sound not working yet */}
           <Sound url={process.env.PUBLIC_URL + "/cook.mp3"} playStatus={Sound.status.PLAYING} />
             <h1>Cooking in progress..</h1>
             <div id="cooking">
