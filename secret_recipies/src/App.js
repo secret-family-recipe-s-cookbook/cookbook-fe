@@ -1,25 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import Navbar from './components/NavBar';
 import Recipies from './components/Cards/recipies';
 import Registration from './components/Registration/Registration';
 import Footer from './components/Footer'
-import Login from './components/Login/Login'
 import HomePage from './components/Pages/homePage'
 import PrivacyPolicy from './components/Pages/PrivacyPolicy'
+import Terms from './components/Pages/Terms'
+import Loading from './components/PreLoaders/Loading'
+
 
 function App() {
+  const [showComponent, setShowComponent] = useState(false);
+  
+  function _onButtonClick() {
+    setShowComponent(true);
+  }
+
   return (
     <div className="App">
-      <Navbar />
+      <Navbar showLoading={_onButtonClick} />
+      {showComponent ? (
+          <Loading call={() => setShowComponent(false)} />
+        ) : null}
       {/* <Recipies/> */}
       <Switch>  
-          <Route path="/home" component={HomePage} />
-          <Route path="/registration" component={Registration} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/terms" component={Terms} />
           <Route path="/policy" component={PrivacyPolicy} />
+          <Route path="/registration" component={Registration} />
       </Switch>
-      <Login />
       <Footer />
     </div>
   );
