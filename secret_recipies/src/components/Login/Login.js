@@ -66,6 +66,7 @@ const Login = (props) => {
             </p>
 
             <ButtonContainer className="button-modal" onClick={props.login}>Login!</ButtonContainer>
+            <p className='forgotText'>Forgot username or password? Click here.</p>
           </form>
         </ClickAwayListener>
       </div>

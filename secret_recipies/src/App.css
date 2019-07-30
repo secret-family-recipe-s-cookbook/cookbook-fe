@@ -380,6 +380,10 @@ font-weight: 900;
   padding-bottom: 1rem;
 }
 
+.forgotText{
+  padding-top: 1rem;
+}
+
 /* Cooking Loading Screen */
 .cookingLoading{
   background: #A64747;
