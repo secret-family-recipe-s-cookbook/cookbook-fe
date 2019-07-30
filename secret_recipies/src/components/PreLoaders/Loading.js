@@ -1,27 +1,27 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {Component} from "react";
 
-function Loading(props) {
-        // Ref creation
-        let loading = useRef();
-        console.log('Loading ref',loading)
-        const LoadingScreen = loading.current;
-
-        useEffect( 
-            window.onclick = () => {
-                LoadingScreen.style.display = "block";
-                const run = () => {
-                    props.call();
-                    window.onclick = undefined;
-                }
-                window.setTimeout(run, 1000); //1 seconds
-            },
+export default class Loading extends Component {
+    constructor(props) {
+        super(props);
     
-            function fadeout() {
-                LoadingScreen.style.display = "none";
-            }
-            ,[])
+        // Ref creation
+        this.Loading = React.createRef();
+      }
+      componentDidMount() {
+        const LoadingScreen = this.Loading.current;
+        window.onload = function() {
+          window.setTimeout(fadeout, 1500);
+        };
+    
+        function fadeout() {
+            LoadingScreen.style.display = "block"
+            ? (LoadingScreen.style.display = "none")
+            : (LoadingScreen.style.display = "block");
+        }
+    }
+    render(){
     return (
-        <div ref={loading}>
+        <div ref={this.Loading} className='cookingLoading'>
             <h1>Cooking in progress..</h1>
             <div id="cooking">
                 <div className="bubble"></div>
@@ -42,5 +42,4 @@ function Loading(props) {
         </div>
       );
      }
-
-export default Loading;
+    }

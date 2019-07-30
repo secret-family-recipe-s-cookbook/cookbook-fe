@@ -17,10 +17,13 @@ const Login = (props) => {
         event.preventDefault();
         console.log(name);
       };
+
+      const disableScroll = () => {document.body.style.overflow = "hidden"}
+
       if(!props.isModalVisible) {
         return null;
       } else {
-        return (<div className='loginModal'>
+        return ({disableScroll} && <div className='loginModal'>
       <form className="login-modal" onSubmit={event => handleSubmit(event)}>
         <h1 className='loginTitle'>Welcome Back</h1>
         <p className='loginInputs'>
@@ -47,7 +50,7 @@ const Login = (props) => {
           </label>
         </p>
 
-        <ButtonContainer className="button-modal">Submit!</ButtonContainer>
+        <ButtonContainer className="button-modal">Login!</ButtonContainer>
       </form>
       </div>)
       } 

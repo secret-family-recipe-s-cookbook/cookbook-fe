@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+html,body {
+  height: 100%;
+}
+
 label {
 font-weight: 900;
 }
@@ -106,10 +110,6 @@ font-weight: 900;
 .signUpImage {
   height: auto;
   width: 60%;
-}
-
-.signButton {
-  
 }
 
 .formTitle {
@@ -305,6 +305,7 @@ font-weight: 900;
   padding: 3rem;
   z-index: 2;
   border-radius: 20px;
+  
 }
 
 .login-modal input{
@@ -360,6 +361,7 @@ font-weight: 900;
   z-index: 1;
   background: rgba(0, 0, 0, 0.6);
   box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+  
 }
 
 .loginTitle {
@@ -374,6 +376,15 @@ font-weight: 900;
 }
 
 /* Cooking Loading Screen */
+.cookingLoading{
+  background: #A64747;
+  color: white;
+  height: 100vh;
+}
+.cookingLoading h1{
+  font-family: 'Handlee', cursive;
+  font-size: 6rem;
+}
 #cooking {
   position: relative;
   margin: 0 auto;
