@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 
-const SavedRecipes = (props) => {
+const RecipeCard = (props) => {
     const { recipe } = props;
     return (
         <div>
@@ -20,4 +20,4 @@ const SavedRecipes = (props) => {
         </div>
     )
 }
-export default SavedRecipes;
+export default RecipeCard;

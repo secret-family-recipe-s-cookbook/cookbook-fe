@@ -29,13 +29,14 @@ function AddRecipeForm(props) {
         cookTime:"",
         servings:"",
         calories:"",
-        image:"" ,
+        image:"",
         ingredients:"",
         directions:"",
         notes:"",
         source:"",
-        bio:"")
-      };
+        bio:""
+        })
+    };
 
       const handleChange = event => {
         event.preventDefault();
@@ -43,9 +44,9 @@ function AddRecipeForm(props) {
       };
     return(
         <div>
-            <button>delete</button>
+            {/* <button>delete</button> */}
             <h3>Create a Recipe</h3>
-            <button>Add Recipe</button>
+            {/* <button>Add Recipe</button> */}
             <form onSubmit={event => handleSubmit(event)}>
                 <label>
                     Title

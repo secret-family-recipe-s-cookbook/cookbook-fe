@@ -48,7 +48,7 @@ const Login = (props) => {
                   type="text"
                   name="username"
                   onChange={changeHandler}
-                  value={name.username}
+                  value={name.usernameoremail}
                 />
               </label>
             </p>
