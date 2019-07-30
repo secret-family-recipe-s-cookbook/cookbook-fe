@@ -2,6 +2,9 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 
 function Terms () {
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    }
     return(
         <div className='terms-page'>
             <h1>Secret Family Recipes Cookbook Terms of Service</h1><br />
@@ -9,7 +12,7 @@ function Terms () {
             <h3>Conditions of Use</h3><br />
             <p>We will provide their services to you, which are subject to the conditions stated below in this document. Every time you visit this website, use its services or make a purchase, you accept the following conditions. This is why we urge you to read them carefully.</p><br />
             <h3>Privacy Policy</h3><br />
-            <p>Before you continue using our website we advise you to read our <NavLink to="/policy">privacy policy</NavLink> regarding our user data collection. It will help you better understand our practices.</p><br />
+            <p>Before you continue using our website we advise you to read our <NavLink to="/policy" onClick={scrollToTop}>privacy policy</NavLink> regarding our user data collection. It will help you better understand our practices.</p><br />
             <h3>Copyright</h3><br />
             <p>Content published on this website (digital downloads, images, texts, graphics, logos) is the property of Secret Family Recipes Cookbook and/or its content creators and protected by international copyright laws. The entire compilation of the content found on this website is the exclusive property of Secret Family Recipes Cookbook, with copyright authorship for this compilation by Secret Family Recipes Cookbook.</p><br />
             <h3>Communications</h3><br />
