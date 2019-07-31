@@ -172,23 +172,14 @@ font-weight: 900;
 .no-recipe {
   display: flex;
   width: auto;
-  margin-top: 3.125rem !important;
-  margin-left: 12.5rem !important;
   justify-content: flex-start;
+  align-items: center;
   width: 100%;
   height: auto;
 }
 
 .no-recipe img {
-  padding-right: 1.875rem;
-}
-
-.no-recipe h1 {
-  font-size: 2.5rem;
-}
-
-.no-recipe h3 {
-  font-size: 1.875rem;
+  width: 20rem;
 }
 
 .create-recipe {
@@ -256,6 +247,8 @@ font-weight: 900;
 .placeholder {
   width: 18.75rem;
   height: auto;
+  align-items: center;
+  
 }
 
 .placeholder img{
@@ -276,6 +269,7 @@ font-weight: 900;
 
 .temp-cards-rotd {
   justify-content: center;
+  
   margin: auto;
   width: auto;
 }
@@ -284,6 +278,7 @@ font-weight: 900;
   margin: 0 12.5rem;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 .placeholder-rotd img{
   width: 35rem;
@@ -293,6 +288,7 @@ font-weight: 900;
 .rotd-text {
   width: 40%;
   margin-left: 2.5rem;
+  align-items: center;
 }
 
 .rotd-text h3 {
@@ -762,6 +758,14 @@ font-weight: 900;
   height: 2.5rem;
   margin-top: .6rem !important;
   font-size: 1.2rem;
+}
+/* Styling for cards in RecipeCard.js */
+.card-grid-view{
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 20%;
+  justify-content: center;
+  padding: 10px 0 10px 0;
 }
 
 /* User Page Styling */

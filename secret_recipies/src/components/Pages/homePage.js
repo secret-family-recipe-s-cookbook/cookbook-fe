@@ -1,9 +1,25 @@
-import React from 'react';
+import React,{ useEffect, useState } from 'react';
+import axios from "axios";
 import { ButtonContainer } from "../styled-components/Button";
-import { Link } from 'react-router-dom';
+import {NavLink} from 'react-router-dom'
 
 
 function HomePage () {
+    const [recipeOfTheDay, setRecipeOfTheDay] = useState();
+    console.log('another food', recipeOfTheDay)
+    useEffect(()=>{
+        axios
+            .get(`https://www.themealdb.com/api/json/v1/1/random.php`)
+            .then(response => {
+                console.log("food of the day", response)
+                const feedMe = response.data.meals
+                console.log("this is food", feedMe)
+                setRecipeOfTheDay(feedMe)
+            })
+            .catch(err => {
+                console.log("error", err)
+            })
+    },[])
     return(
         <div className='home-page'>
             <div className="top-content-image">
@@ -13,7 +29,7 @@ function HomePage () {
                     <h1>Family Recipes</h1>
                 </div>
                 <div className='top-content-button'>
-                <Link to='/createrecipe'><ButtonContainer className='create-recipe'>Create a Recipe</ButtonContainer></Link>
+                <NavLink to="/login"><ButtonContainer className='create-recipe'>Create a Recipe</ButtonContainer></NavLink>
                 </div>
             </div>
 

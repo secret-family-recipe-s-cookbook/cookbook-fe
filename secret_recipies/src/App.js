@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import Navbar from './components/NavBar';
-import Recipies from './components/Cards/recipies';
 import Registration from './components/Registration/Registration';
 import Footer from './components/Footer';
 import HomePage from './components/Pages/homePage';
@@ -11,7 +10,8 @@ import Terms from './components/Pages/Terms';
 import Loading from './components/PreLoaders/Loading';
 import PrivateRoute from './Utillities/authRouter';
 import UserPage from './components/Pages/userPage';
-import DisplayRecipe from './components/CreateRecipe'
+import Login from './components/Login/Login';
+import AddRecipeForm from './components/CreateRecipe/AddRecipeForm'
 
 function App() {
   const [showComponent, setShowComponent] = useState(false);
@@ -26,13 +26,13 @@ function App() {
       {showComponent ? (
           <Loading call={() => setShowComponent(false)} />
         ) : null}
-      {/* <Recipies/> */}
       <Switch>  
           <Route exact path="/" component={HomePage} />
           <Route path="/terms" component={Terms} />
           <Route path="/policy" component={PrivacyPolicy} />
           <Route path="/registration" component={Registration} />
-          <Route path="/createrecipe" component={DisplayRecipe} />
+          <Route path="/login" component={Login} />
+          <Route path="/createrecipe" component={Login} />
           <PrivateRoute path="/protected" component={UserPage} />
       </Switch>
       <Footer />
