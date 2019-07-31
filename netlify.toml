@@ -1,2 +1,4 @@
 [build]
 base = "secret_recipies"
+publish = "secret_recipies/build"
+command = "yarn build"
