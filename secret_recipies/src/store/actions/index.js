@@ -55,6 +55,7 @@ export const addUser = addUser => dispatch => {
     return true;
   })
   .catch(err => {
+    
     dispatch({type: REGISTRATION_FAILURE, payload: err.response})
   })
 }

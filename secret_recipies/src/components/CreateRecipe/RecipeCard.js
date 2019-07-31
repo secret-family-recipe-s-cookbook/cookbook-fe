@@ -31,34 +31,41 @@ const StyledDiv = styled.div
 `   
     display: inline-block;
     max-width: 1024px;
+    padding-left: 20px;
 
 `
 
 const RecipeCard = ({recipe, openModal}) => (
-    <StyledDiv>
-    <Card>
-        <Image src={recipe.image} wrapped ui={false} />
-        <Card.Content>
-        <Card.Header>{recipe.title}</Card.Header>
-        <Card.Meta>
-            <span className='date'>{recipe.categories}</span>
-        </Card.Meta>
-        <Card.Description>
-        {recipe.description}
-        </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-        <a>
-            {/* <Icon name='edit' /> */}
+    <>
+        <StyledDiv>
+            <Card>
+                <Image src={recipe.image} wrapped ui={false} />
+                <Card.Content>
+                <Card.Header>{recipe.title}</Card.Header>
+                <Card.Meta>
+                    <span className='date'>{recipe.categories}</span>
+                </Card.Meta>
+                <Card.Description>
+                {recipe.description}
+                </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                
+                    {/* <Icon name='edit' /> */}
+                    
+                
+                <a>  
+                    {/* <Icon name='delete' /> */}
+                    
+                </a>
+                </Card.Content>
+            </Card>
+        </StyledDiv>
+        <div>
             <NavLink to={`/createrecipe/edit/${recipe.id}`}>Edit</NavLink>
-        </a>  
-        <a>  
-            {/* <Icon name='delete' /> */}
             <div onClick={openModal}>Delete</div>
-        </a>
-        </Card.Content>
-    </Card>
-    </StyledDiv>
+        </div>
+    </>
 )
 
 export default RecipeCard

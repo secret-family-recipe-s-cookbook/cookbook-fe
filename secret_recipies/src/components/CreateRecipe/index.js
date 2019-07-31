@@ -41,9 +41,7 @@ function DisplayRecipe() {
         }
     ])
 
-    const [open, setOpen] = useState(false);
-    const openModal = () => setOpen(true)
-    const closeModal = () => setOpen(false)
+   
 
     const addRecipe = recipe => {
         setRecipes([...recipes, {...recipe, id: Date.now()}])
@@ -60,12 +58,26 @@ function DisplayRecipe() {
 
     }
 
+    const [open, setOpen] = useState(false);
+    const openModal = () => setOpen(true)
+    const closeModal = () => setOpen(false)
+
+    const [openModalState, setOpenModalState] = useState(false);
+    const openModal1 = () => setOpenModalState(true)
+    const closeModal1 = () => setOpenModalState(false)
+
     return (
         <div>
             {open ?
             <div>
                 <Button onClick={openModal}></Button>
                 <Confirm content= "Are you sure to delete your recipe permanently?" cancelButton= "Cancel" confirmButton="Delete" open={openModal} onCancel={closeModal} onConfirm={closeModal} />
+            </div> : null
+            }
+            {openModalState ?
+            <div>
+                <Button onClick={openModal1}></Button>
+                <Confirm content= "Are you sure to erase everything?" cancelButton= "Keep it" confirmButton="Erase" open={openModal1} onCancel={closeModal1} onConfirm={closeModal1} />
             </div> : null
             }
             <div className="create-recipe-navlink">

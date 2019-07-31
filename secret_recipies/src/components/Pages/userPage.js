@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import RecipeCard from '../CreateRecipe/RecipeCard';
 import { ButtonContainer } from "../styled-components/Button";
 import { Link } from 'react-router-dom';
@@ -16,14 +15,14 @@ function UserPage (props) {
                 <div className='userPageTitle'>       
                     <h1>My Recipes</h1>
                 </div>
-                <div className='noRecipe'>
+                <div className='no-recipe'>
                     <div>
                         <img src={process.env.PUBLIC_URL + "/pan.svg"} alt='User Page Image' className='userPageLogo' />
                     </div>
                     <div>
                         <h1>Oh no!</h1>
-                        <h3>{props.username} hasn't created a recipe yet.</h3>
-                        <Link to='/createrecipe'><ButtonContainer className="userPageCreateButton">Create a Recipe</ButtonContainer></Link>
+                        <h3>You havn't created a recipe yet.</h3>
+                        <Link to={'/createrecipe'}><ButtonContainer className="userPageCreateButton">Create a Recipe</ButtonContainer></Link>
                     </div>
                 </div>
             </div>
