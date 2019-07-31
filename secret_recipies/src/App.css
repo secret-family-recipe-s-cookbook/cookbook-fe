@@ -612,3 +612,47 @@ font-weight: 900;
     opacity: 0.25;
   }
 }
+
+
+/* Styling for create recipe form in AddRecipeForm.js */
+
+.create-recipe-form{
+  padding-top: 40px;
+}
+
+/* User Page Styling */
+.user-page {
+  height: 100vh;
+  padding: 5rem;
+}
+
+.user-page h1{
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.user-page h3{
+  margin-top: 2rem !important;
+  margin-bottom: 4rem !important;
+  font-size: 2rem;
+}
+
+.userPageLogo{
+  height: auto;
+  width: 12rem;
+  margin-right: 4rem !important;
+}
+
+.noRecipe {
+  display: flex;
+  margin-top: 5rem !important;
+  margin-left: 7rem !important;
+}
+
+.userPageCreateButton {
+  border-radius: 1.875rem;
+  border: none;
+  width: 22rem;
+  height: 3rem;
+  font-size: 2rem;
+}

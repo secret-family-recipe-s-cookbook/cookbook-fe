@@ -10,18 +10,18 @@ function UserPage (props) {
     if (!props.cards) {
       
     return(
-        <div className='home-page'>
-            <div className='hp-title'>       
+        <div className='user-page'>
+            <div className='userPageTitle'>       
                 <h1>My Recipes</h1>
             </div>
-            <div className='no-recipe'>
+            <div className='noRecipe'>
                 <div>
-            <img src={process.env.PUBLIC_URL + "/pan.svg"} alt='' className='logo' />
-            </div>
+                    <img src={process.env.PUBLIC_URL + "/pan.svg"} alt='User Page Image' className='userPageLogo' />
+                </div>
                 <div>
                     <h1>Oh no!</h1>
                     <h3>{props.username} hasn't created a recipe yet.</h3>
-                    <Link to={``}><ButtonContainer className="signUpSubmit">Create a Recipe</ButtonContainer></Link>
+                    <Link to={``}><ButtonContainer className="userPageCreateButton">Create a Recipe</ButtonContainer></Link>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@ const { recipe } = props;
     return(
         <>
         <div className='my-recipes'>
-            <div className='hp-title'>       
+            <div className='userPageTitle'>       
                 <h1>My Recipes</h1>
             </div>
             <Link to={``}><ButtonContainer className="signUpSubmit">Add Recipe</ButtonContainer></Link>
