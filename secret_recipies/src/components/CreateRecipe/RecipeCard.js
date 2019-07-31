@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import {NavLink} from "react-router-dom"
 
 const RecipeCard = ({recipe}) => {
     
@@ -17,6 +18,8 @@ const RecipeCard = ({recipe}) => {
             <p>{recipe.notes}</p>
             <p>{recipe.source}</p>
             <p>{recipe.bio}</p>
+            <NavLink to={`/createrecipe/edit/${recipe.id}`}>Edit</NavLink> {'  '}
+            <NavLink to={`/createrecipe/delete/${recipe.id}`}>Delete</NavLink>
         </div>
     )
 }
