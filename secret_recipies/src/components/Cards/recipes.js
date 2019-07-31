@@ -1,13 +1,13 @@
 import React from 'react';
-import Recipie from "./recipie";
+import Recipe from "./recipe";
 
-const Recipies = props => {
+const Recipes = props => {
     return(
         <div className='recipiemap'>
             {props.cards.map(card =>
-                {return <Recipie key={card.id} card={card} />
+                {return <Recipe key={card.id} card={card} />
                 })}
         </div>
     );
 };
-export default Recipies;
+export default Recipes;
