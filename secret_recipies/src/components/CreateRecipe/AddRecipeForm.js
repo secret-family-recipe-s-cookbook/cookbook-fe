@@ -70,8 +70,9 @@ function AddRecipeForm(props) {
         <div className = "create-recipe-form">
             {/* <button>delete</button> */}
             <div className='create-recipe-form-header'>
+            <div className='trashBackground' onClick={props.openModal}><img src='https://i.imgur.com/d4m3vlB.png?1' alt='Trash Icon' className='trashIcon' /></div>
             <HeaderStyling>Create a Recipe</HeaderStyling>
-            <ButtonContainer type ="submit" className="signUpSubmit">{buttonText}</ButtonContainer>            
+            <ButtonContainer type ="submit" className="create-recipe-submit">{buttonText}</ButtonContainer>            
             </div>
             {/* <button>Add Recipe</button> */}
             <form onSubmit={event => handleSubmit(event)}>
@@ -87,85 +88,83 @@ function AddRecipeForm(props) {
                             <label>
                                 Description:
                             </label>
-                                <input type="text" value={recipe.description} name="description" onChange = {handleChange}/>
+                            <input type="text" value={recipe.description} name="description" onChange = {handleChange}/>
                         </p>
                         <p className='create-recipe-inputs'>
                             <label>
                                 Categories:
                             </label>
-                                <input type="text" value={recipe.categories} name="categories" onChange = {handleChange}/>
+                            <input type="text" value={recipe.categories} name="categories" onChange = {handleChange}/>
                         </p>
                         <div className='create-recipe-flex'>
                             <p className='create-recipe-inputs'>
                                 <label>
                                     Prep Time:
                                 </label>
-                                    <input type="time" value={recipe.prepTime} name="prepTime" onChange = {handleChange}/>
+                                <input type="time" value={recipe.prepTime} name="prepTime" onChange = {handleChange}/>
                             </p>
                             <p className='create-recipe-inputs'>
                                 <label>
                                     Cook Time:
                                 </label>
-                                    <input type="time" value={recipe.cookTime} name="cookTime" onChange = {handleChange}/>
+                                <input type="time" value={recipe.cookTime} name="cookTime" onChange = {handleChange}/>
                             </p>
                             <p className='create-recipe-inputs'>
                                 <label>
                                     Servings:
                                 </label>
-                                    <input type="number" value={recipe.servings} name="servings" onChange = {handleChange}/>
+                                <input type="number" value={recipe.servings} name="servings" onChange = {handleChange}/>
                             </p>
                             <p className='create-recipe-inputs'>
                                 <label>
                                     Calories:
                                 </label>
-                                    <input type="number" value={recipe.calories} name="calories" onChange = {handleChange}/>
+                                <input type="number" value={recipe.calories} name="calories" onChange = {handleChange}/>
                             </p>
                         </div>
                     </div>
                         <div className="sideTwo">
                             <p className='create-recipe-inputs'>
-                            <input type="file" value={recipe.image} name="file" accept="image/png, image/jpeg" onChange = {handleChange} className='inputfile' id='file' data-multiple-caption="{count} files selected" multiple />
-                            <label for="file" className="inputfileLabel">Image: </label>
-                            <h3>Add Images </h3>
+                                <input type="file" value={recipe.image} name="file" accept="image/png, image/jpeg" onChange = {handleChange} className='inputfile' id='file' data-multiple-caption="{count} files selected" multiple />
+                                <label for="file" className="inputfileLabel">Image: </label>
+                                <h3>Add Images </h3>
                             </p>
                         </div>
                 </div>
+                <div className='create-recipe-dividerTwo'>
+                    <p className='create-recipe-inputs'>
+                        <label>
+                            Ingredients:
+                        </label>
+                        <textarea rows="12" cols="50" type="text" value={recipe.ingredients} name="ingredients" onChange = {handleChange} />
+                    </p>
+                    <p className='create-recipe-inputs'>
+                        <label>
+                            Directions:
+                        </label>
+                        <textarea rows="12" cols="50" type="text" value={recipe.directions} name="directions" onChange = {handleChange} />
+                    </p>
+                    <p className='create-recipe-inputs'>
+                        <label>
+                            Notes:
+                        </label>
+                        <textarea rows="12" cols="50" type="text" value={recipe.notes} name="notes" onChange = {handleChange} />
+                    </p>
+                </div>
                 <p className='create-recipe-inputs'>
-
-                <label>
-                    Ingredients:
-                </label>
-                    <input type="text" value={recipe.ingredients} name="ingredients" onChange = {handleChange}/>
-                </p>
-                <p className='create-recipe-inputs'>
-
-                <label>
-                    Directions:
-                </label>
-                    <input type="text" value={recipe.directions} name="directions" onChange = {handleChange}/>
-                </p>
-                <p className='create-recipe-inputs'>
-
-                <label>
-                    Notes:
-                </label>
-                    <input type="text" value={recipe.notes} name="notes" onChange = {handleChange}/>
-                </p>
-                <p className='create-recipe-inputs'>
-
                 <label>
                     Source (optional):
                 </label>
-                    <input type="text" value={recipe.source} name="source" onChange = {handleChange}/>
+                    <input type="text" value={recipe.source} name="source" onChange = {handleChange} className='optionalArea' />
                 </p>
                 <p className='create-recipe-inputs'>
 
                 <label>
                     Bio (optional):
                 </label>
-                    <input type="text" value={recipe.bio} name="bio" onChange = {handleChange}/>
+                    <textarea rows="12" cols="50" type="text" value={recipe.bio} name="bio" onChange = {handleChange} className='optionalArea' />
                 </p>
-                <ButtonContainer type ="submit" className="signUpSubmit">{buttonText}</ButtonContainer>
+                <ButtonContainer type ="submit" className="create-recipe-submit">{buttonText}</ButtonContainer>
             </form>
         </div>
     )

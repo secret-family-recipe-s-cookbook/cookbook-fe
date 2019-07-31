@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import {NavLink} from "react-router-dom"
 
-const RecipeCard = ({recipe}) => {
+const RecipeCard = ({recipe, openModal}) => {
     
     return (
         <div>
@@ -19,7 +19,7 @@ const RecipeCard = ({recipe}) => {
             <p>{recipe.source}</p>
             <p>{recipe.bio}</p>
             <NavLink to={`/createrecipe/edit/${recipe.id}`}>Edit</NavLink> {'  '}
-            <NavLink to={`/createrecipe/delete/${recipe.id}`}>Delete</NavLink>
+            <div onClick={openModal}>Delete</div>
         </div>
     )
 }
