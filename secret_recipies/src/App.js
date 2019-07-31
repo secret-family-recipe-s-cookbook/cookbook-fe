@@ -10,7 +10,8 @@ import Terms from './components/Pages/Terms';
 import Loading from './components/PreLoaders/Loading';
 import PrivateRoute from './Utillities/authRouter';
 import UserPage from './components/Pages/userPage';
-import Login from './components/Login/Login'
+import Login from './components/Login/Login';
+import AddRecipeForm from './components/CreateRecipe/AddRecipeForm'
 
 function App() {
   const [showComponent, setShowComponent] = useState(false);
@@ -31,6 +32,7 @@ function App() {
           <Route path="/policy" component={PrivacyPolicy} />
           <Route path="/registration" component={Registration} />
           <Route path="/login" component={Login} />
+          <Route path="/createrecipe" component={Login} />
           <PrivateRoute path="/protected" component={UserPage} />
       </Switch>
       <Footer />

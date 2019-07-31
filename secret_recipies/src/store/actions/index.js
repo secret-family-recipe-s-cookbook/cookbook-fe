@@ -9,10 +9,11 @@ export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAILURE = "FETCH_FAILURE";
 
 export const fetchCard = () =>dispatch => {
-  dispatch({FETCH_START});
-  axiosWithAuth
-    .get(`/recipies`)
+  dispatch({ type: FETCH_START});
+  axiosWithAuth()
+    .get(`/recipes`,)
     .then(res => {
+      console.log('fetched recipes', res.data)
       dispatch({type:FETCH_SUCCESS, payload:res.data})
     })
     .catch(err => {
