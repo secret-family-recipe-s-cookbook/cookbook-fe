@@ -1,22 +1,25 @@
 import React, {useState} from "react"
+import {NavLink} from "react-router-dom"
 
-const RecipeCard = (props) => {
-    const { recipe } = props;
+const RecipeCard = ({recipe, openModal}) => {
+    
     return (
         <div>
-            <div>{recipe.title}</div>
-            <div>{recipe.description}</div>
-            <div>{recipe.categories}</div>
-            <div>{recipe.prepTime}</div>
-            <div>{recipe.cookTime}</div>
-            <div>{recipe.servings}</div>
-            <div>{recipe.calories}</div>
-            <div>{recipe.image}</div>
-            <div>{recipe.ingredients}</div>
-            <div>{recipe.directions}</div>
-            <div>{recipe.notes}</div>
-            <div>{recipe.source}</div>
-            <div>{recipe.bio}</div>
+            <h2>{recipe.title}</h2>
+            <p>{recipe.description}</p>
+            <p>{recipe.categories}</p>
+            <p>{recipe.prepTime}</p>
+            <p>{recipe.cookTime}</p>
+            <p>{recipe.servings}</p>
+            <p>{recipe.calories}</p>
+            <img url={recipe.image} alt="picture of food" />
+            <p>{recipe.ingredients}</p>
+            <p>{recipe.directions}</p>
+            <p>{recipe.notes}</p>
+            <p>{recipe.source}</p>
+            <p>{recipe.bio}</p>
+            <NavLink to={`/createrecipe/edit/${recipe.id}`}>Edit</NavLink> {'  '}
+            <div onClick={openModal}>Delete</div>
         </div>
     )
 }

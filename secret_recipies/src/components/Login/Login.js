@@ -29,6 +29,7 @@ const Login = (props) => {
             props.history.push('/protected');
           }
           console.log(props.history)
+          props.setIsModalVisible(false)
         });
       }
 

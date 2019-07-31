@@ -21,6 +21,14 @@ font-weight: 900;
   justify-content: space-between;
   z-index: 5;
 }
+.userNavbar {
+  display: flex;
+  background: #A64747;
+  color: white;
+  justify-content: space-between;
+  z-index: 6;
+  align-items: center;
+}
 .navtitle {
   display: flex;
   align-items: center;
@@ -62,6 +70,10 @@ font-weight: 900;
 }
 
 .navbar a {
+  color: white;
+}
+
+.userNavbar a {
   color: white;
 }
 /* Footer Styling */
@@ -612,3 +624,180 @@ font-weight: 900;
     opacity: 0.25;
   }
 }
+
+
+/* Styling for create recipe form in AddRecipeForm.js */
+
+.create-recipe-form{
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-recipe-navlink{
+  background: rgba(141, 107, 76, 0.54);
+  height: 40px;
+ 
+}
+
+.create-recipe-form input {
+  background: #EFEFEF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  padding:.3rem;
+}
+
+.create-recipe-form textarea {
+  background: #EFEFEF;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  padding:.3rem;
+  width: 70%;
+}
+
+.optionalArea {
+  width: 60% !important;
+}
+
+.create-recipe-form label {
+  font-size: 1.3rem;
+  margin-bottom: .5rem !important;
+}
+
+.create-recipe-inputs {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.create-recipe-flex{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem !important;
+}
+
+.create-recipe-dividerOne{
+  margin-bottom: 2rem !important;
+  border-bottom: 3px solid #EFEFEF;
+  display: flex;
+}
+
+.create-recipe-dividerTwo{
+  margin-bottom: 2rem !important;
+  padding-bottom: 2rem !important;
+  border-bottom: 3px solid #EFEFEF;
+}
+
+.create-recipe-dividerOne input{
+  width: 80%;
+}
+
+.sideOne{
+  width: 60%;
+}
+
+.sideTwo{
+  width: 40%;
+  border: 3px solid #EFEFEF;
+  border-radius: 4px;
+  margin-bottom: 2rem !important;
+}
+
+.sideTwo h3{
+  text-align: center;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + .inputfileLabel {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: white;
+  display: inline-block;
+}
+
+.inputfileLabel {
+  background-image: url("https://i.imgur.com/YUIReCt.png?1") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 17rem;
+}
+
+.inputfile + .inputfileLabel{
+	cursor: pointer; 
+}
+
+.create-recipe-form-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.trashIcon{
+  height: 2rem;
+}
+
+.trashBackground{
+  background: #C13B3B;
+  padding: .1rem;
+  height: 2.2rem;
+  width: 4rem;
+  border-radius: 5px;
+  
+}
+
+.create-recipe-submit {
+  border-radius: 1.875rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  width: 11rem;
+  height: 2.5rem;
+  margin-top: .6rem !important;
+  font-size: 1.2rem;
+}
+
+/* User Page Styling */
+.user-page {
+  height: 100vh;
+  padding: 5rem;
+}
+
+.user-page h1{
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.user-page h3{
+  margin-top: 2rem !important;
+  margin-bottom: 4rem !important;
+  font-size: 2rem;
+}
+
+.userPageLogo{
+  height: auto;
+  width: 12rem;
+  margin-right: 4rem !important;
+}
+
+.noRecipe {
+  display: flex;
+  margin-top: 5rem !important;
+  margin-left: 7rem !important;
+}
+
+.userPageCreateButton {
+  border-radius: 1.875rem;
+  border: none;
+  width: 22rem;
+  height: 3rem;
+  font-size: 2rem;
+}
+
