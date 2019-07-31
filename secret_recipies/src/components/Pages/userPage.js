@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Recipies from '../Cards/recipies';
+import RecipeCard from '../CreateRecipe/RecipeCard';
 import { ButtonContainer } from "../styled-components/Button";
 import { Link } from 'react-router-dom';
 import UserNavBar from '../UserNavBar';
@@ -38,9 +38,9 @@ const { recipe } = props;
             <div className='userPageTitle'>       
                 <h1>My Recipes</h1>
             </div>
-            <Link to={``}><ButtonContainer className="signUpSubmit">Add Recipe</ButtonContainer></Link>
+            <Link to={`/createrecipe`}><ButtonContainer className="signUpSubmit">Add Recipe</ButtonContainer></Link>
         </div>
-        <Recipies props={recipe} />
+        <RecipeCard props={recipe} />
         </>
     )
 }
