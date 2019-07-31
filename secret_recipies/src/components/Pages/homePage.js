@@ -1,6 +1,6 @@
 import React from 'react';
 import { ButtonContainer } from "../styled-components/Button";
-import { Link } from 'react-router-dom';
+import {NavLink} from 'react-router-dom'
 
 
 function HomePage () {
@@ -13,7 +13,7 @@ function HomePage () {
                     <h1>Family Recipes</h1>
                 </div>
                 <div className='top-content-button'>
-                <Link to='/createrecipe'><ButtonContainer className='create-recipe'>Create a Recipe</ButtonContainer></Link>
+                <NavLink to="/login"><ButtonContainer className='create-recipe'>Create a Recipe</ButtonContainer></NavLink>
                 </div>
             </div>
 
