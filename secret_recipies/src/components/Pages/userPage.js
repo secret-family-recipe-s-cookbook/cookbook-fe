@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import RecipeCard from '../CreateRecipe/RecipeCard';
+import Recipes from '../Cards/recipes';
 import { ButtonContainer } from "../styled-components/Button";
 import { Link } from 'react-router-dom';
-import UserNavBar from '../UserNavBar';
 
 function UserPage (recipe) {
-    const [recipies, setRecipies] = useState({
+    const [recipes, setRecipes] = useState({
            "recipe_image": " ",
             "title": "",
             "description": "",
@@ -21,7 +20,7 @@ function UserPage (recipe) {
       
     return(
         <>
-            <UserNavBar />
+            
             <div className='user-page'>
                 <div className='userPageTitle'>       
                     <h1>My Recipes</h1>
@@ -31,7 +30,7 @@ function UserPage (recipe) {
                         <img src={process.env.PUBLIC_URL + "/pan.svg"} alt='User Page Image' className='userPageLogo' />
                     </div>
                     <div>
-                    {recipies.map(recipe => <RecipeCard recipe={recipe} />)}
+                    {/* <Recipes cards=this.props.cards */}
                         <Link to={'/createrecipe'}><ButtonContainer className="userPageCreateButton">Create a Recipe</ButtonContainer></Link>
                     </div>
                 </div>
@@ -39,17 +38,7 @@ function UserPage (recipe) {
         </>
     )
 
-    return(
-        <>
-        <div className='my-recipes'>
-            <div className='userPageTitle'>       
-                <h1>My Recipes</h1>
-            </div>
-            <Link to={`/createrecipe`}><ButtonContainer className="signUpSubmit">Add Recipe</ButtonContainer></Link>
-        </div>
-        
-        </>
-    )
+    
 }
 
 export default UserPage
