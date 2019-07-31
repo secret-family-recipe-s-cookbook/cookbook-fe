@@ -71,9 +71,9 @@ function AddRecipeForm(props) {
         <div className = "create-recipe-form">
             {/* <button>delete</button> */}
             <div className='create-recipe-form-header'>
-            <div className='trashBackground' onClick={props.openModal1}><img src='https://i.imgur.com/d4m3vlB.png?1' alt='Trash Icon' className='trashIcon' /></div>
+            <div className='trashBackground' onClick={props.openModal}><img src='https://i.imgur.com/d4m3vlB.png?1' alt='Trash Icon' className='trashIcon' /></div>
             <HeaderStyling>Create a Recipe</HeaderStyling>
-            <ButtonContainer type ="submit" className="create-recipe-submit">{buttonText}</ButtonContainer>            
+            <form onSubmit={event => handleSubmit(event)}><ButtonContainer type ="submit" className="create-recipe-submit">{buttonText}</ButtonContainer></form>           
             </div>
             {/* <button>Add Recipe</button> */}
             <form onSubmit={event => handleSubmit(event)}>

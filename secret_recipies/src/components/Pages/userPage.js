@@ -4,9 +4,20 @@ import { ButtonContainer } from "../styled-components/Button";
 import { Link } from 'react-router-dom';
 import UserNavBar from '../UserNavBar';
 
-function UserPage (props) {
+function UserPage (recipe) {
+    const [recipies, setRecipies] = useState({
+           "recipe_image": " ",
+            "title": "",
+            "description": "",
+            "ingredients": "",
+            "directions": "",
+            "Notes": " ",
+            "source": " ",
+            "bio": " ",
+            "source_image": " " ,
+});
     
-    if (!props.cards) {
+
       
     return(
         <>
@@ -20,17 +31,14 @@ function UserPage (props) {
                         <img src={process.env.PUBLIC_URL + "/pan.svg"} alt='User Page Image' className='userPageLogo' />
                     </div>
                     <div>
-                        <h1>Oh no!</h1>
-                        <h3>You havn't created a recipe yet.</h3>
+                    {recipies.map(recipe => <RecipeCard recipe={recipe} />)}
                         <Link to={'/createrecipe'}><ButtonContainer className="userPageCreateButton">Create a Recipe</ButtonContainer></Link>
                     </div>
                 </div>
             </div>
         </>
     )
-}
 
-const { recipe } = props;
     return(
         <>
         <div className='my-recipes'>
@@ -39,7 +47,7 @@ const { recipe } = props;
             </div>
             <Link to={`/createrecipe`}><ButtonContainer className="signUpSubmit">Add Recipe</ButtonContainer></Link>
         </div>
-        <RecipeCard props={recipe} />
+        
         </>
     )
 }

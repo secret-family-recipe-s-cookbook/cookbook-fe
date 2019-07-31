@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import {NavLink} from "react-router-dom"
 import { Card, Icon, Image } from 'semantic-ui-react'
-import styled from "styled-components";
+
 
 // const RecipeCard = ({recipe, openModal}) => {
     
@@ -27,45 +27,32 @@ import styled from "styled-components";
 // }
 // export default RecipeCard;
 
-const StyledDiv = styled.div
-`   
-    display: inline-block;
-    max-width: 1024px;
-    padding-left: 20px;
-
-`
 
 const RecipeCard = ({recipe, openModal}) => (
-    <>
-        <StyledDiv>
-            <Card>
-                <Image src={recipe.image} wrapped ui={false} />
-                <Card.Content>
-                <Card.Header>{recipe.title}</Card.Header>
-                <Card.Meta>
-                    <span className='date'>{recipe.categories}</span>
-                </Card.Meta>
-                <Card.Description>
-                {recipe.description}
-                </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                
-                    {/* <Icon name='edit' /> */}
-                    
-                
-                <a>  
-                    {/* <Icon name='delete' /> */}
-                    
-                </a>
-                </Card.Content>
-            </Card>
-        </StyledDiv>
+ 
+    <div className="card-grid-view">
         <div>
-            <NavLink to={`/createrecipe/edit/${recipe.id}`}>Edit</NavLink>
-            <div onClick={openModal}>Delete</div>
+        <Card>
+            <Image src={recipe.image} wrapped ui={false} />
+            <Card.Content>
+            <Card.Header>{recipe.title}</Card.Header>
+            <Card.Meta>
+                <span className='date'>{recipe.categories}</span>
+            </Card.Meta>
+            <Card.Description>
+            {recipe.description}
+            </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+                <NavLink to={`/createrecipe/edit/${recipe.id}`}> <Icon name='edit' /> Edit</NavLink>
+                {" "}
+                <a onClick={openModal}><Icon name='delete' /> Delete</a> 
+            </Card.Content>
+        </Card>
         </div>
-    </>
+    </div>
+       
+   
 )
 
 export default RecipeCard

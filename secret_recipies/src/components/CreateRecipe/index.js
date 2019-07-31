@@ -6,40 +6,17 @@ import { Route, NavLink } from "react-router-dom";
 
 
 function DisplayRecipe() {
-    const [recipes, setRecipes] = useState([
-        {
-        id: 0,
-        title:"Food",
-        description:"delicious",
-        categories:"Meal",
-        prepTime:"1:00",
-        cookTime:"1",
-        servings:"1:00",
-        calories:"900",
-        image:"https://i.imgur.com/FAhghO2.jpg",
-        ingredients:"vegetables",
-        directions:"boil it",
-        notes:"stir well",
-        source:"Me",
-        bio:"best cook"
-        },
-        {
-        id: 1,
-        title:"Food",
-        description:"delicious",
-        categories:"Meal",
-        prepTime:"1:00",
-        cookTime:"1",
-        servings:"1:00",
-        calories:"900",
-        image:"https://i.imgur.com/FAhghO2.jpg",
-        ingredients:"vegetables",
-        directions:"boil it",
-        notes:"stir well",
-        source:"Me",
-        bio:"best cook"
-        }
-    ])
+    const [recipes, setRecipes] = useState({
+            "recipe_image": " ",
+            "title": "",
+            "description": "",
+            "ingredients": "",
+            "directions": "",
+            "Notes": " ",
+            "source": " ",
+            "bio": " ",
+            "source_image": " ",
+    })
 
    
 
@@ -55,16 +32,13 @@ function DisplayRecipe() {
     }
 
     const deleteRecipe = recipe => {
-
+        
     }
 
     const [open, setOpen] = useState(false);
     const openModal = () => setOpen(true)
     const closeModal = () => setOpen(false)
 
-    const [openModalState, setOpenModalState] = useState(false);
-    const openModal1 = () => setOpenModalState(true)
-    const closeModal1 = () => setOpenModalState(false)
 
     return (
         <div>
@@ -73,13 +47,7 @@ function DisplayRecipe() {
                 <Button onClick={openModal}></Button>
                 <Confirm content= "Are you sure to delete your recipe permanently?" cancelButton= "Cancel" confirmButton="Delete" open={openModal} onCancel={closeModal} onConfirm={closeModal} />
             </div> : null
-            }
-            {openModalState ?
-            <div>
-                <Button onClick={openModal1}></Button>
-                <Confirm content= "Are you sure to erase everything?" cancelButton= "Keep it" confirmButton="Erase" open={openModal1} onCancel={closeModal1} onConfirm={closeModal1} />
-            </div> : null
-            }
+            } 
             <div className="create-recipe-navlink">
                 <NavLink to="/createrecipe/">Add Recipes</NavLink>
                 <NavLink to="/createrecipe/myrecipes">My Recipes</NavLink>

@@ -8,6 +8,18 @@ export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAILURE = "FETCH_FAILURE";
 
+export const fetchCard = () =>dispatch => {
+  dispatch({FETCH_START});
+  axiosWithAuth
+    .get(`/recipies`)
+    .then(res => {
+      dispatch({type:FETCH_SUCCESS, payload:res.data})
+    })
+    .catch(err => {
+      dispatch({type: FETCH_FAILURE, payload: err.response})
+    });
+}
+
 //Login Action
 
 export  const LOGIN_START ="LOGIN_START";
