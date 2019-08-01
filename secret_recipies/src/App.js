@@ -32,7 +32,7 @@ function App() {
           <Route path="/policy" component={PrivacyPolicy} />
           <Route path="/registration" component={Registration} />
           <Route path="/login" component={Login} />
-          <Route path="/createrecipe" component={Login} />
+          <Route path="/createrecipe" component={AddRecipeForm} />
           <PrivateRoute path="/protected" component={UserPage} />
       </Switch>
       <Footer />

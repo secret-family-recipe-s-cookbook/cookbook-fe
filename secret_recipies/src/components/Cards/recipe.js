@@ -6,22 +6,19 @@ const Recipe = props => {
     console.log('recipe props',props.card)
     return (
          <div className="card-grid-view">
-            <Card>
+            <Card className='recipeCard'>
                 <Image src={props.card.recipe_image} wrapped ui={false} />
                 <Card.Content>
-                    <Card.Header>{props.card.title}</Card.Header>
-                    <Card.Meta>
-                        <span className='date'>Joined in 2015</span>
-                    </Card.Meta>
+                    <Card.Header className='text-capitalize'><h2>{props.card.title}</h2></Card.Header>
                     <Card.Description>
-                        Matthew is a musician living in Nashville.
+                    {props.card.description}
                     </Card.Description>
                 </Card.Content>
                 <Card.Content extra>
-                    <a>
-                        <Icon name='user' />
-                        22 Friends
-                    </a>
+                    Ingredients:
+                       <p>{props.card.ingredients}</p>
+                    Directions:
+                       <p>{props.card.directions}</p>
                 </Card.Content>
             </Card>
          </div>
