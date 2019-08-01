@@ -26,6 +26,7 @@ export const ADD_START ="ADD_START";
 
 export const addRecipe = (index) => dispatch => {
   dispatch({ type: ADD_START });
+  console.log(index)
   axiosWithAuth()
   .post(`/recipes`, index)
   .then(res => {
@@ -36,6 +37,36 @@ export const addRecipe = (index) => dispatch => {
   .catch (err =>{
     dispatch({type: FETCH_FAILURE})
   });
+}
+
+//Edit Action
+export const EDIT_START="EDIT_START"
+
+export const updateRecipe = (id, editRecipe) => dispatch => {
+  dispatch({ type: EDIT_START })
+  axiosWithAuth()
+  .put(`/recipes/${id}`, editRecipe)
+  .then(res => {
+    dispatch({ type: FETCH_SUCCESS, payload: res.data})
+  })
+  .catch(err => {
+    dispatch({ type: FETCH_FAILURE, payload: err.response})
+  });
+}
+
+//Delete Action
+export const DELETE_START = "DELETE_START"
+
+export const deleteRecipe = (id) => dispatch => {
+  dispatch({ type:DELETE_START })
+  axiosWithAuth()
+    .delete(`/recipes/${id}`)
+    .then(res => {
+      dispatch({ type:FETCH_SUCCESS, payload:res.data})
+    })
+    .catch(err => {
+      dispatch({ type: FETCH_FAILURE, payload:err.response})
+    });
 }
 //Login Action
 
