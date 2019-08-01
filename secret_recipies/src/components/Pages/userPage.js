@@ -34,6 +34,13 @@ class userPage extends Component {
     //     }
     // }
     render() {
+        let recipesToDisplay = [];
+        if (this.props.filteredRecipes.length > 0) {
+            recipesToDisplay = this.props.filteredRecipes;
+        }
+        else {
+            recipesToDisplay = this.props.data;
+        }
         console.log('userPage props', this.props)
         return(
             <>
@@ -41,14 +48,11 @@ class userPage extends Component {
                 <div className='user-page'>
                     <div className='userPageTitle'>       
                         <h1>My Recipes</h1>
+                        <Link to={'/createrecipe'}><ButtonContainer className="userPageCreateButton">Add Another Recipe</ButtonContainer></Link>
                     </div>
                     <div className='no-recipe'>
                         <div>
-                            <img src={process.env.PUBLIC_URL + "/pan.svg"} alt='User Page Image' className='userPageLogo' />
-                        </div>
-                        <div>
-                        <Recipes data={this.props.data} setX={this.props.setX} />
-                            <Link to={'/createrecipe'}><ButtonContainer className="userPageCreateButton">Add Another Recipe</ButtonContainer></Link>
+                        <Recipes data={recipesToDisplay} setX={this.props.setX} />
                         </div>
                     </div>
                 </div>
@@ -60,6 +64,7 @@ class userPage extends Component {
 const mapStateToProps = state =>   ({
     data: state.cardReducer.data.data,
     fetching: state.cardReducer.fetching,
+    filteredRecipes: state.cardReducer.filteredRecipes,
     error: state.cardReducer.error
    })
   

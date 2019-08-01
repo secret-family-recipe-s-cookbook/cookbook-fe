@@ -159,7 +159,7 @@ class EditRecipeForm extends Component {
                 </label>
                     <textarea rows="12" cols="50" type="text" value={this.state.recipe.bio} name="bio" onChange = {this.handleChange} className='optionalArea' />
                 </span>
-                <ButtonContainer type ="submit" className="create-recipe-submit" onClick={this.addRecipe}>Edit Recipe</ButtonContainer>
+                <ButtonContainer type ="submit" className="create-recipe-submit" onClick={this.editRecipe}>Edit Recipe</ButtonContainer>
             </form>
         </div>
     )

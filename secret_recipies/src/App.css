@@ -17,6 +17,7 @@ font-weight: 900;
 .text-capitalize {
   text-transform: capitalize;
 }
+
 /* Search Bar */
 .searchbar {
   height: 3rem;
@@ -209,15 +210,6 @@ font-weight: 900;
 .user-title h1{
   justify-content: flex-start;
   font-size: 2.5rem;
-}
-
-.no-recipe {
-  display: flex;
-  width: auto;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: auto;
 }
 
 .no-recipe img {
@@ -818,10 +810,15 @@ font-weight: 900;
 
 /* User Page Styling */
 .user-page {
-  height: 100vh;
-  padding: 5rem;
+  padding: 2rem;
 }
-
+.userPageTitle{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: baseline;
+  padding-bottom: 30px;
+}
 .user-page h1{
   font-weight: 600;
   font-size: 3rem;
@@ -858,6 +855,11 @@ font-weight: 900;
   min-width: 20rem;
   transition: all 0.3s ease-in;
   border-color: transparent;
+  border: none !important;
+}
+
+.recipeCard img{
+  max-height: 20rem;
 }
 
 .recipeCard:hover {

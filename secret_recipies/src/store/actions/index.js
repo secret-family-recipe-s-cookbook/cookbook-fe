@@ -2,8 +2,10 @@ import { logout } from '../../Utillities/services';
 import axiosWithAuth from '../../Utillities/axiosWithAuth';
 import axios from 'axios';
 
-//Fetching Actions
+// Recipes to filter
+const recipesToFilter = []
 
+//Fetching Actions
 export const FETCH_START = "FETCH_START";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAILURE = "FETCH_FAILURE";
@@ -11,15 +13,17 @@ export const FETCH_FAILURE = "FETCH_FAILURE";
 export const fetchCard = () =>dispatch => {
   dispatch({ type: FETCH_START});
   axiosWithAuth()
-    .get(`/recipes`,)
-    .then(res => {
-      console.log('fetched recipes', res.data)
-      dispatch({type:FETCH_SUCCESS, payload:res.data})
-    })
-    .catch(err => {
-      dispatch({type: FETCH_FAILURE, payload: err.response})
-    });
+  .get(`/recipes`,)
+  .then(res => {
+    console.log('fetched recipes', res.data)
+    dispatch({type:FETCH_SUCCESS, payload:res.data})
+    recipesToFilter.push(res.data)
+  })
+  .catch(err => {
+    dispatch({type: FETCH_FAILURE, payload: err.response})
+  });
 }
+
 
 // Add Action
 export const ADD_START ="ADD_START";
@@ -118,4 +122,17 @@ export const addUser = addUser => dispatch => {
     
     dispatch({type: REGISTRATION_FAILURE, payload: err.response})
   })
+}
+
+
+// Search Action
+export const SEARCH_RECIPE = 'SEARCH_RECIPE';
+export const search = searchString => {
+  searchString= searchString.toLowerCase();
+  let filteredRecipes = recipesToFilter[0].data.filter(data => data.title.toLowerCase().includes(searchString))
+
+  return {
+      type: SEARCH_RECIPE,
+      payload: filteredRecipes
+  }
 }
