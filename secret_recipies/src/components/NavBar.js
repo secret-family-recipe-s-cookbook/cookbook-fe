@@ -26,7 +26,7 @@ function Navbar (props) {
     }
 
     return (
-    <React.Fragment>
+    <>
         <div className='navbar sticky'>
             <NavLink to="/" className="navtitle" onClick={() => props.showLoading()}>
                 <Tooltip title="Home">
@@ -35,11 +35,11 @@ function Navbar (props) {
                     <h3 className='title'>Secret Family Recipe Cookbook</h3>
             </NavLink>
             <div className="signButton">
-                <NavLink onClick={() => props.showLoading()}>
+                <div onClick={() => props.showLoading()}>
                 <Tooltip title="Login">
                     <h3 className='signIn' onClick={()=>loginHandler()}>Sign In</h3>
                 </Tooltip>
-                </NavLink>
+                </div>
                 <NavLink to="/registration" onClick={() => props.showLoading()}>
                 <Tooltip title="Register">
                     <h3 className='signIn'>Join</h3>
@@ -48,7 +48,7 @@ function Navbar (props) {
             </div>
         </div>
             <Login isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} closeLoginHandler={closeLoginHandler} closeLoginHandler2={closeLoginHandler2} />
-    </React.Fragment>
+    </>
     )
 }
 
