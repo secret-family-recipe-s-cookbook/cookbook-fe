@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { search } from '../store/actions';
 
 
-export default function SearchForm({ onSearch }) {
-  const [query, setQuery] = useState({
-    title: ""
-  })
-  const handleInputChange = (event) => {
-    setQuery({ ...query, title: event.target.value })
-  }
-  
-  const search = (event) => {
-     onSearch(query.title);
-    event.preventDefault();
-
-  }
+class SearchForm extends Component {
+  render(){
 
   return (
     <section className="searchbar">
-      <form inline onSubmit={(event) => search(event)}>
+      <form autoComplete="off">
         <input className='searchinput'
-          onChange={handleInputChange}
+          onChange={(event) => this.props.search(event.target.value, this.props.data)}
           placeholder="Find a family recipe"
-          value={query.title}
-          name="title"
+          name='search'
+          type='text'
         />
         <button className='searchbutton' color="success" type="submit">Search</button>
       </form>
     </section>
   );
 }
+}
+
+const mapStateToProps = (state) => ({
+    data: state.data
+})
+
+export default connect(mapStateToProps, { search })(SearchForm);

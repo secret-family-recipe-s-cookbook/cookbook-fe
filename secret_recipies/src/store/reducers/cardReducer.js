@@ -1,9 +1,10 @@
-import {FETCH_START, FETCH_SUCCESS, FETCH_FAILURE, ADD_START, EDIT_START, DELETE_START} from '../actions';
+import {FETCH_START, FETCH_SUCCESS, FETCH_FAILURE, ADD_START, EDIT_START, DELETE_START, SEARCH_RECIPE} from '../actions';
 
 export const initialState = {
     data: [],
     error:'',
-    fetchingData:false,    
+    fetchingData:false,
+    filteredRecipes: [],    
 }
 
 export const cardReducer =(state = initialState, action) => {
@@ -20,6 +21,11 @@ export const cardReducer =(state = initialState, action) => {
             return{...state, data:action.payload, fetching:false};
         case FETCH_SUCCESS:
             return{...state, error:action.payload, fetching:false};
+            case SEARCH_RECIPE:
+            return {
+                ...state,
+                filteredRecipes: action.payload
+            }
         default:
             return state
     }

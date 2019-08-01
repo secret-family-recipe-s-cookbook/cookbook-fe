@@ -14,6 +14,7 @@ import Login from './components/Login/Login';
 import AddRecipeForm from './components/CreateRecipe/AddRecipeForm'
 import recipes from './components/Cards/recipes'
 import EditRecipeForm from './components/CreateRecipe/EditRecipeForm'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [showComponent, setShowComponent] = useState(false);
@@ -53,11 +54,6 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/createrecipe" component={AddRecipeForm} />
           <Route path="/editrecipe/:id" render= {() => <EditRecipeForm editRecipe={editRecipe}/>}/>
-          {/* <Route path="/editrecipe/:id" 
-            render={props => {
-              const recipe = recipes.find(recipe => recipe.id.toString() === props.match.params.id)
-              console.log("hello", recipe)
-              return <EditRecipeForm {...props} submitRecipe={editRecipe}/>}}/> */}
           <PrivateRoute path="/protected" setX={setX} component={UserPage} />
       </Switch>
       <Footer />
