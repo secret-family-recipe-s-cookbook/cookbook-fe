@@ -742,7 +742,11 @@ font-weight: 900;
 }
 
 .trashIcon{
-  height: 2rem;
+  font-size: 2rem;
+  color: white;
+  background: #C13B3B;
+  height:  3.5rem;
+  padding: .5rem;
 }
 
 .trashBackground{

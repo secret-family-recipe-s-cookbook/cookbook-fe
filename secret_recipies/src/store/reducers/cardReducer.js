@@ -1,4 +1,4 @@
-import {FETCH_START, FETCH_SUCCESS, FETCH_FAILURE} from '../actions';
+import {FETCH_START, FETCH_SUCCESS, FETCH_FAILURE, ADD_START} from '../actions';
 
 export const initialState = {
     data: [],
@@ -7,9 +7,10 @@ export const initialState = {
 }
 
 export const cardReducer =(state = initialState, action) => {
-    console.log('reducer state', state)
     switch (action.type) {
         case FETCH_START:
+            return{...state, fetching:true};
+        case ADD_START:
             return{...state, fetching:true};
         case FETCH_SUCCESS:
             return{...state, data:action.payload, fetching:false};
