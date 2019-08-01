@@ -26,7 +26,7 @@ function UserNavbar (props) {
     }
 
     return (
-    <React.Fragment>
+    <>
         <div className='userNavbar sticky'>
             <NavLink to="/" className="navtitle" onClick={() => props.showLoading()}>
                 <Tooltip title="Home">
@@ -43,7 +43,7 @@ function UserNavbar (props) {
             </div>
         </div>
             <Login isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} closeLoginHandler={closeLoginHandler} closeLoginHandler2={closeLoginHandler2} />
-    </React.Fragment>
+    </>
     )
 }
 

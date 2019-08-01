@@ -13,6 +13,11 @@ label {
 font-weight: 900;
 }
 
+/* Text Styles */
+.text-capitalize {
+  text-transform: capitalize;
+}
+
 /* Navbar Component Styling */
 .navbar {
   display: flex;
@@ -737,7 +742,11 @@ font-weight: 900;
 }
 
 .trashIcon{
-  height: 2rem;
+  font-size: 2rem;
+  color: white;
+  background: #C13B3B;
+  height:  3.5rem;
+  padding: .5rem;
 }
 
 .trashBackground{
@@ -788,7 +797,7 @@ font-weight: 900;
 .userPageLogo{
   height: auto;
   width: 12rem;
-  margin-right: 4rem !important;
+  margin-right: 12rem !important;
 }
 
 .noRecipe {
@@ -798,10 +807,23 @@ font-weight: 900;
 }
 
 .userPageCreateButton {
-  border-radius: 1.875rem;
   border: none;
   width: 22rem;
   height: 3rem;
   font-size: 2rem;
+  margin-top: 2rem !important;
 }
 
+/* Recipe Card Styling */
+.recipeCard {
+  min-width: 20rem;
+  transition: all 0.3s ease-in;
+  border-color: transparent;
+}
+
+.recipeCard:hover {
+  cursor: pointer;
+  border: 0.04rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 5px 15px dimgray;
+  transform: scale(1.025);
+}

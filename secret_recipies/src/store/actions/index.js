@@ -21,6 +21,22 @@ export const fetchCard = () =>dispatch => {
     });
 }
 
+// Add Action
+export const ADD_START ="ADD_START";
+
+export const addRecipe = (index) => dispatch => {
+  dispatch({ type: ADD_START });
+  axiosWithAuth()
+  .post(`/recipes`, index)
+  .then(res => {
+    console.log('added recipe', res.data)
+    dispatch({type: FETCH_SUCCESS, payload: res.data})
+    return true
+  })
+  .catch (err =>{
+    dispatch({type: FETCH_FAILURE})
+  });
+}
 //Login Action
 
 export  const LOGIN_START ="LOGIN_START";

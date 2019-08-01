@@ -1,6 +1,8 @@
-import React, {useState} from "react"
+import React, {Component} from "react"
+import { addRecipe } from "../../store/actions";
 import { ButtonContainer } from "../styled-components/Button";
 import styled from "styled-components";
+import {connect} from 'react-redux'
 
 export const InputStyling = styled.input
 `
@@ -24,151 +26,154 @@ padding-bottom: 10px;
 font-size: 25px;
 `
 
-function AddRecipeForm(props) {
-    const { submitRecipe, initialRecipe, buttonText, history } = props;
-    const [recipe, setRecipe] = useState(initialRecipe || {
-       title:"",
-       description:"",
-       categories:"",
-       prepTime:"",
-       cookTime:"",
-       servings:"",
-       calories:"",
-       recipe_image:"",
-       ingredients:"",
-       directions:"",
-       Notes:"",
-       source:"",
-       bio:""
-    });
+class AddRecipeForm extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            recipe: {
+                "title":"",
+                "description":"",
+                "categories":"",
+                "prepTime":"",
+                "cookTime":"",
+                "servings":"",
+                "calories":"",
+                "recipe_image":"",
+                "ingredients":"",
+                "directions":"",
+                "Notes":"",
+                "source":"",
+                "bio":""
+             }
+        }
+    }
 
-    const handleSubmit = event => {
+    handleSubmit = event => {
         event.preventDefault();
-        submitRecipe(recipe);
-        setRecipe({  
-        title:"",
-        description:"",
-        categories:"",
-        prepTime:"",
-        cookTime:"",
-        servings:"",
-        calories:"",
-        recipe_image:"",
-        ingredients:"",
-        directions:"",
-        Notes:"",
-        source:"",
-        bio:""
-        })
-        history.push("/createrecipe/myrecipes")
+        const {title, description,categories,prepTime,cookTime,servings,calories,recipe_image,ingredients,directions,Notes,source,bio} = this.state;
+        this.props.addRecipe({title, description,categories,prepTime,cookTime,servings,calories,recipe_image,ingredients,directions,Notes,source,bio});
+        this.setState({title:"", description:"",categories:"",prepTime:"",cookTime:"",servings:"",calories:"",recipe_image:"",ingredients:"",directions:"",Notes:"",source:"",bio:""})
     };
 
-      const handleChange = event => {
+      handleChange = event => {
         event.preventDefault();
-        setRecipe({ ...recipe, [event.target.name]: event.target.value });
+        this.setState({recipe: {...this.state.recipe, [event.target.name]: event.target.value} });
       };
+
+    //   const newRecipe = e => {
+    //       console.log(recipe)
+    //       e.preventDefault();
+    //       props.addRecipe(recipe);
+    //       props.history.push('/protected')
+    //   }
+      render() {
     return(
         <div className = "create-recipe-form">
             {/* <button>delete</button> */}
             <div className='create-recipe-form-header'>
-            <div className='trashBackground' onClick={props.openModal}><img src='https://i.imgur.com/d4m3vlB.png?1' alt='Trash Icon' className='trashIcon' /></div>
+            <i className="far fa-trash-alt trashIcon" />
             <HeaderStyling>Create a Recipe</HeaderStyling>
-            <form onSubmit={event => handleSubmit(event)}><ButtonContainer type ="submit" className="create-recipe-submit">{buttonText}</ButtonContainer></form>           
+            <form onSubmit={this.handleSubmit}><ButtonContainer type ="submit" className="create-recipe-submit">Add Recipe</ButtonContainer></form>           
             </div>
             {/* <button>Add Recipe</button> */}
-            <form onSubmit={event => handleSubmit(event)}>
+            <form onSubmit={this.handleSubmit}>
                 <div className='create-recipe-dividerOne'>
                     <div className="sideOne">
-                        <p className='create-recipe-inputs'>
+                        <span className='create-recipe-inputs'>
                             <label>
                                 Title
                             </label>
-                            <input type="text" value={recipe.title} name="title" onChange = {handleChange}/>
-                        </p>
-                        <p className='create-recipe-inputs'>
+                            <input type="text" value={this.state.recipe.title} name="title" onChange = {this.handleChange} required />
+                        </span>
+                        <span className='create-recipe-inputs'>
                             <label>
                                 Description:
                             </label>
-                            <input type="text" value={recipe.description} name="description" onChange = {handleChange}/>
-                        </p>
-                        <p className='create-recipe-inputs'>
+                            <input type="text" value={this.state.recipe.description} name="description" onChange = {this.handleChange}  />
+                        </span>
+                        <span className='create-recipe-inputs'>
                             <label>
                                 Categories:
                             </label>
-                            <input type="text" value={recipe.categories} name="categories" onChange = {handleChange}/>
-                        </p>
+                            <input type="text" value={this.state.recipe.categories} name="categories" onChange = {this.handleChange}/>
+                        </span>
                         <div className='create-recipe-flex'>
-                            <p className='create-recipe-inputs'>
+                            <span className='create-recipe-inputs'>
                                 <label>
                                     Prep Time:
                                 </label>
-                                <input type="time" value={recipe.prepTime} name="prepTime" onChange = {handleChange}/>
-                            </p>
-                            <p className='create-recipe-inputs'>
+                                <input type="time" value={this.state.recipe.prepTime} name="prepTime" onChange = {this.handleChange}/>
+                            </span>
+                            <span className='create-recipe-inputs'>
                                 <label>
                                     Cook Time:
                                 </label>
-                                <input type="time" value={recipe.cookTime} name="cookTime" onChange = {handleChange}/>
-                            </p>
-                            <p className='create-recipe-inputs'>
+                                <input type="time" value={this.state.recipe.cookTime} name="cookTime" onChange = {this.handleChange}/>
+                            </span>
+                            <span className='create-recipe-inputs'>
                                 <label>
                                     Servings:
                                 </label>
-                                <input type="number" value={recipe.servings} name="servings" onChange = {handleChange}/>
-                            </p>
-                            <p className='create-recipe-inputs'>
+                                <input type="number" value={this.state.recipe.servings} name="servings" onChange = {this.handleChange}/>
+                            </span>
+                            <span className='create-recipe-inputs'>
                                 <label>
                                     Calories:
                                 </label>
-                                <input type="number" value={recipe.calories} name="calories" onChange = {handleChange}/>
-                            </p>
+                                <input type="number" value={this.state.recipe.calories} name="calories" onChange = {this.handleChange}/>
+                            </span>
                         </div>
                     </div>
-                        <div className="sideTwo">
-                            <p className='create-recipe-inputs'>
-                                <input type="file" value={recipe.recipe_image} name="file" accept="image/png, image/jpeg" onChange = {handleChange} className='inputfile' id='file' data-multiple-caption="{count} files selected" multiple />
-                                <label for="file" className="inputfileLabel">Image: </label>
+                        <span className="sideTwo">
+                            <div className='create-recipe-inputs'>
+                                <input type="file" value={this.state.recipe.recipe_image} name="file" accept="image/png, image/jpeg" onChange = {this.handleChange} className='inputfile' id='file' data-multiple-caption="{count} files selected" multiple />
+                                <label htmlFor="file" className="inputfileLabel">Image: </label>
                                 <h3>Add Images </h3>
-                            </p>
-                        </div>
+                            </div>
+                        </span>
                 </div>
                 <div className='create-recipe-dividerTwo'>
-                    <p className='create-recipe-inputs'>
+                    <span className='create-recipe-inputs'>
                         <label>
                             Ingredients:
                         </label>
-                        <textarea rows="12" cols="50" type="text" value={recipe.ingredients} name="ingredients" onChange = {handleChange} />
-                    </p>
-                    <p className='create-recipe-inputs'>
+                        <textarea rows="12" cols="50" type="text" value={this.state.recipe.ingredients} name="ingredients" onChange = {this.handleChange} required />
+                    </span>
+                    <span className='create-recipe-inputs'>
                         <label>
                             Directions:
                         </label>
-                        <textarea rows="12" cols="50" type="text" value={recipe.directions} name="directions" onChange = {handleChange} />
-                    </p>
-                    <p className='create-recipe-inputs'>
+                        <textarea rows="12" cols="50" type="text" value={this.state.recipe.directions} name="directions" onChange = {this.handleChange} required />
+                    </span>
+                    <span className='create-recipe-inputs'>
                         <label>
                             Notes:
                         </label>
-                        <textarea rows="12" cols="50" type="text" value={recipe.Notes} name="Notes" onChange = {handleChange} />
-                    </p>
+                        <textarea rows="12" cols="50" type="text" value={this.state.recipe.Notes} name="Notes" onChange = {this.handleChange} />
+                    </span>
                 </div>
-                <p className='create-recipe-inputs'>
+                <span className='create-recipe-inputs'>
                 <label>
                     Source (optional):
                 </label>
-                    <input type="text" value={recipe.source} name="source" onChange = {handleChange} className='optionalArea' />
-                </p>
-                <p className='create-recipe-inputs'>
+                    <input type="text" value={this.state.recipe.source} name="source" onChange = {this.handleChange} className='optionalArea' />
+                </span>
+                <span className='create-recipe-inputs'>
 
                 <label>
                     Bio (optional):
                 </label>
-                    <textarea rows="12" cols="50" type="text" value={recipe.bio} name="bio" onChange = {handleChange} className='optionalArea' />
-                </p>
-                <ButtonContainer type ="submit" className="create-recipe-submit">{buttonText}</ButtonContainer>
+                    <textarea rows="12" cols="50" type="text" value={this.state.recipe.bio} name="bio" onChange = {this.handleChange} className='optionalArea' />
+                </span>
+                <ButtonContainer type ="submit" className="create-recipe-submit" onClick={this.handleSubmit}>Add Recipe</ButtonContainer>
             </form>
         </div>
     )
+      }
 }
 
-export default AddRecipeForm;
+const mapStateToProps = state => {
+    return {error:state.error}
+   }
+  
+  export default connect(mapStateToProps,{addRecipe}) (AddRecipeForm);
