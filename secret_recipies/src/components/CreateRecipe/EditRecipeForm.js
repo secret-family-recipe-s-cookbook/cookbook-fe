@@ -1,90 +1,74 @@
 import React, {Component} from "react"
-import { addRecipe } from "../../store/actions";
+import { updateRecipe, deleteRecipe } from "../../store/actions";
 import { ButtonContainer } from "../styled-components/Button";
 import styled from "styled-components";
 import {connect} from 'react-redux'
-import { Route } from "react-router-dom";
-import EditRecipeForm from './EditRecipeForm'
 
-
-class AddRecipeForm extends Component {
+class EditRecipeForm extends Component {
     constructor(props){
         super(props)
         this.state = {
-            recipe: {
-                "title":"",
-                "description":"",
-                "categories":"",
-                "prepTime":"",
-                "cookTime":"",
-                "servings":"",
-                "calories":"",
-                "recipe_image":"",
-                "ingredients":"",
-                "directions":"",
-                "Notes":"",
-                "source":"",
-                "bio":""
+            recipe: this.props.editRecipe || {
+                "title":'',
+                "description":'',
+                "categories":'',
+                "prepTime":'',
+                "cookTime":'',
+                "servings":'',
+                "calories":'',
+                "recipe_image":'',
+                "ingredients":'',
+                "directions":'',
+                "Notes":'',
+                "source":'',
+                "bio":''
              }
         }
+        console.log('edit recipe props',this.props.editRecipe)
     }
 
-    editRecipe = editedRecipe => {
-        const recipesCopy = [...this.state.recipes];
-        const oldRecipe = recipesCopy.find(recipe => this.state.recipe.id === editedRecipe.id)
-        Object.assign(oldRecipe, editedRecipe);
-        this.setState(recipesCopy);
-    }
+    // deleteRecipe = e => {
+    //     e.preventDefault()
+    //     this.this.props.deleteRecipe(this.props.recipe)
+    //     this.setState({
+    //         recipe: {
+    //             "title":"",
+    //             "description":"",
+    //             "categories":"",
+    //             "prepTime":"",
+    //             "cookTime":"",
+    //             "servings":"",
+    //             "calories":"",
+    //             "recipe_image":"",
+    //             "ingredients":"",
+    //             "directions":"",
+    //             "Notes":"",
+    //             "source":"",
+    //             "bio":""
+    //         }
+    //     })
+    // }
 
     handleSubmit = event => {
         event.preventDefault();
-        const {title, description,categories,prepTime,cookTime,servings,calories,recipe_image,ingredients,directions,Notes,source,bio} = this.state;
-        this.props.addRecipe({title, description,categories,prepTime,cookTime,servings,calories,recipe_image,ingredients,directions,Notes,source,bio});
-        this.setState({title:"", description:"",categories:"",prepTime:"",cookTime:"",servings:"",calories:"",recipe_image:"",ingredients:"",directions:"",Notes:"",source:"",bio:""})
+        this.props.updateRecipe(this.state.recipe.id, this.state.recipe)
+       
     };
 
       handleChange = event => {
         event.preventDefault();
-        this.setState({recipe: {...this.state.recipe, [event.target.name]: event.target.value} });
+        this.setState({recipe: {...this.props.editRecipe, [event.target.name]: event.target.value} });
       };
 
-      
-      addRecipe = e => {
-          console.log(this.state.recipe)
-          e.preventDefault()
-          this.props.addRecipe(this.state.recipe)
-          this.setState({
-              recipe: {
-                "title":"",
-                "description":"",
-                "categories":"",
-                "prepTime":"",
-                "cookTime":"",
-                "servings":"",
-                "calories":"",
-                "recipe_image":"",
-                "ingredients":"",
-                "directions":"",
-                "Notes":"",
-                "source":"",
-                "bio":""
-            }
-        })
-    }
+     
     render() {
-        const editRecipe = editedRecipe => {
-          const recipesCopy = [...this.state.recipe];
-          const oldRecipe = recipesCopy.find(recipe => recipe.id === editedRecipe.id)
-          Object.assign(oldRecipe, editedRecipe);
-          this.setState({recipe: recipesCopy});
-      }
-        return(
+    return(
         <div className = "create-recipe-form">
             {/* <button>delete</button> */}
             <div className='create-recipe-form-header'>
-            <i className="far fa-trash-alt trashIcon" />
-            <h1>Create a Recipe</h1>
-            <form onSubmit={this.handleSubmit}><ButtonContainer type ="submit" className="create-recipe-submit">Add Recipe</ButtonContainer></form>           
+            <i className="far fa-trash-alt trashIcon" onClick={()=> this.props.deleteRecipe(this.state.recipe.id)} />
+            <h1>Edit Recipe</h1>
+            <form onSubmit={this.handleSubmit}><ButtonContainer type ="submit" className="create-recipe-submit">Edit Recipe</ButtonContainer></form>           
             </div>
             {/* <button>Add Recipe</button> */}
             <form onSubmit={this.handleSubmit}>
@@ -135,12 +119,12 @@ class AddRecipeForm extends Component {
                             </span>
                         </div>
                     </div>
-                        <span className="sideTwo create-recipe-inputs">
-                                <label>
-                                    Image Url:
-                                </label>                                
-                                <input type="text" value={this.state.recipe.recipe_image} name="recipe_image" onChange = {this.handleChange}  />
-                        </span>
+                    <span className="sideTwo create-recipe-inputs">
+                        <label>
+                            Image Url:
+                        </label>                                
+                        <input type="text" value={this.state.recipe.recipe_image} name="recipe_image" onChange = {this.handleChange}  />
+                    </span>
                 </div>
                 <div className='create-recipe-dividerTwo'>
                     <span className='create-recipe-inputs'>
@@ -175,20 +159,20 @@ class AddRecipeForm extends Component {
                 </label>
                     <textarea rows="12" cols="50" type="text" value={this.state.recipe.bio} name="bio" onChange = {this.handleChange} className='optionalArea' />
                 </span>
-                <ButtonContainer type ="submit" className="create-recipe-submit" onClick={this.addRecipe}>Add Recipe</ButtonContainer>
+                <ButtonContainer type ="submit" className="create-recipe-submit" onClick={this.addRecipe}>Edit Recipe</ButtonContainer>
             </form>
         </div>
     )
       }
 }
 
-const mapStateToProps = state => {
-    console.log("state", state)
-    return {
-        data: state.cardReducer.data.data,
-        fetching: state.cardReducer.fetching,
-        error:state.cardReducer.error
-    }
-}
+// const mapStateToProps = state => {
+//     console.log("state", state)
+//     return {
+//         data: state.cardReducer.data.data,
+//         fetching: state.cardReducer.fetching,
+//         error:state.cardReducer.error
+//     }
+//    }
   
-  export default connect(mapStateToProps,{addRecipe}) (AddRecipeForm);
+  export default connect(null,{updateRecipe, deleteRecipe}) (EditRecipeForm);

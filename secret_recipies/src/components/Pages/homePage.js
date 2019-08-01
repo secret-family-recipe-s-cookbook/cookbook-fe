@@ -19,7 +19,6 @@ function HomePage () {
                 console.log("error", err)
             })
     },[])
-    if(recipeOfTheDay){console.log('another food', recipeOfTheDay[0].strInstructions)}
     return(
         <div className='home-page'>
             <div className="top-content-image">
@@ -41,13 +40,7 @@ function HomePage () {
                         <h3>Meatless Monday Recipes</h3>
                         <img src='https://i.imgur.com/xbAB1QK.jpg'/>
                         <p>
-                            Put the onion and oil in a large pan and fry over a fairly high heat for 3-4 mins. 
-                            Add the garlic and mince and fry until they both brown. Add the mushrooms and herbs, and cook for another couple of mins. 
-                            Stir in the tomatoes, beef stock, tomato ketchup or Worcestershire sauce and seasoning. 
-                            Bring to the boil, then reduce the heat, cover and simmer, stirring occasionally, for 30 mins. 
-                            Meanwhile, cook the spaghetti in a large pan of boiling, salted water, according to packet instructions. 
-                            Drain well, run hot water through it, put it back in the pan and add a dash of olive oil, if you like, then stir in the meat sauce. 
-                            Serve in hot bowls and hand round Parmesan cheese, for sprinkling on top.
+                            Sometext here
                         </p>
                     </div>
                     <div className='placeholder'>
@@ -68,10 +61,10 @@ function HomePage () {
                 <div className='temp-cards-rotd'>
                     <div className='placeholder-rotd'>
                     <div>
-                        {recipeOfTheDay ? <img src={recipeOfTheDay[0].strMealThumb}/> : <h1>Loading</h1>}
+                        {recipeOfTheDay ? <img src={recipeOfTheDay[0].strMealThumb}/> : <h3>Loading</h3>}
                     </div>
                     <div className='rotd-text'>
-                        {recipeOfTheDay ? <h3>{recipeOfTheDay[0].strMeal}</h3> : <h1>Loading</h1>}
+                        {recipeOfTheDay ? <h3>{recipeOfTheDay[0].strMeal}</h3> : <h3>Loading</h3>}
                         {/* <span>&#11088;&#11088;&#11088;&#11088;&#9734;   102 reviews</span> */}
                         
                        {recipeOfTheDay ? <p>{recipeOfTheDay[0].strInstructions}</p> : <h1>Loading</h1>}

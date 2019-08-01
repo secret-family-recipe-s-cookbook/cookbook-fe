@@ -9,7 +9,7 @@ return <h1>Loading Recipes</h1>
 return (
     <div className='recipemap'>
         {props.data.map(card =>
-            <Recipe key={card.id} card={card} />
+            <Recipe key={card.id} card={card} setX={props.setX} />
             )}
     </div>
 )
