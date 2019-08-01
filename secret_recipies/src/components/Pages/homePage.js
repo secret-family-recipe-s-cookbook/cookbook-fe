@@ -6,7 +6,6 @@ import {NavLink} from 'react-router-dom'
 
 function HomePage () {
     const [recipeOfTheDay, setRecipeOfTheDay] = useState();
-    console.log('another food', recipeOfTheDay)
     useEffect(()=>{
         axios
             .get(`https://www.themealdb.com/api/json/v1/1/random.php`)
@@ -20,6 +19,7 @@ function HomePage () {
                 console.log("error", err)
             })
     },[])
+    if(recipeOfTheDay){console.log('another food', recipeOfTheDay[0].strMeal)}
     return(
         <div className='home-page'>
             <div className="top-content-image">
@@ -60,10 +60,10 @@ function HomePage () {
                 <div className='temp-cards-rotd'>
                     <div className='placeholder-rotd'>
                     <div>
-                    <img src='https://i.imgur.com/sjvZeC7.jpg'/>
+                        {recipeOfTheDay ? <img src={recipeOfTheDay[0].strMealThumb}/> : <h1>Loading</h1>}
                     </div>
                     <div className='rotd-text'>
-                        <h3>Grandma B's Apple Pie</h3>
+                        {recipeOfTheDay ? <h3>{recipeOfTheDay[0].strMeal}</h3> : <h1>Loading</h1>}
                         <span>&#11088;&#11088;&#11088;&#11088;&#9734;   102 reviews</span>
                         
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
