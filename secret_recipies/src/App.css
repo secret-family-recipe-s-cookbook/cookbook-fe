@@ -885,6 +885,7 @@ font-weight: 900;
 /* Recipe Card Styling */
 .recipeCard {
   min-width: 20rem;
+  min-height: 60rem;
   transition: all 0.3s ease-in;
   border-color: transparent;
   border: none !important;

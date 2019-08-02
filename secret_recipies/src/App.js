@@ -41,6 +41,21 @@ function App() {
   return (
     <div className="App">
       <Navbar showLoading={_onButtonClick} />
+<<<<<<< HEAD
+      {showComponent ? (
+          <Loading call={() => setShowComponent(false)} />
+        ) : null}
+      <Switch>  
+          <Route exact path="/" component={HomePage} />
+          <Route path="/terms" component={Terms} />
+          <Route path="/policy" component={PrivacyPolicy} />
+          <Route path="/registration" component={Registration} />
+          <Route path="/login" component={Login} />
+          <Route path="/createrecipe" component={AddRecipeForm} />
+          <Route path="/editrecipe/:id" render= {() => <EditRecipeForm editRecipe={editRecipe}/>}/>
+          <Route path="/recipiepage/:id" render= {() => <RecipePage editRecipe={editRecipe}/>}/>
+          <PrivateRoute path="/protected" setX={setX} component={UserPage} />
+=======
       {showComponent ? <Loading call={() => setShowComponent(false)} /> : null}
       <Switch>
         <Route exact path="/" component={HomePage} />
@@ -54,6 +69,7 @@ function App() {
           render={() => <EditRecipeForm editRecipe={editRecipe} />}
         />
         <PrivateRoute path="/protected" setX={setX} component={UserPage} />
+>>>>>>> d708ba66c8b6c94f78936aef21795098493f5d8b
       </Switch>
       <Footer />
     </div>

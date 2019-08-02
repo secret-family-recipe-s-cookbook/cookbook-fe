@@ -4,7 +4,8 @@ import { NavLink } from 'react-router-dom'
 import { connect } from "react-redux";
 import { deleteRecipe } from "../../store/actions"
 
-const Recipe = props => {    
+const Recipe = props => { 
+   
     const editRecipe = () => {
         props.setX(props.card)
     }
@@ -14,7 +15,7 @@ const Recipe = props => {
     }
     return (
         <div className="card-grid-view">
-            <NavLink to={`/recipepage/${props.card.id}`}>
+            <NavLink to={`/recipepage/${props.card.id}`} >
                 <Card className='recipeCard'>
                     <Image size ="medium" src={props.card.recipe_image} wrapped ui={false} />
                     <Card.Content>
