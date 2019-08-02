@@ -12,7 +12,6 @@ import PrivateRoute from "./Utillities/authRouter";
 import UserPage from "./components/Pages/userPage";
 import Login from "./components/Login/Login";
 import AddRecipeForm from "./components/CreateRecipe/AddRecipeForm";
-import recipes from "./components/Cards/recipes";
 import EditRecipeForm from "./components/CreateRecipe/EditRecipeForm";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -41,21 +40,6 @@ function App() {
   return (
     <div className="App">
       <Navbar showLoading={_onButtonClick} />
-<<<<<<< HEAD
-      {showComponent ? (
-          <Loading call={() => setShowComponent(false)} />
-        ) : null}
-      <Switch>  
-          <Route exact path="/" component={HomePage} />
-          <Route path="/terms" component={Terms} />
-          <Route path="/policy" component={PrivacyPolicy} />
-          <Route path="/registration" component={Registration} />
-          <Route path="/login" component={Login} />
-          <Route path="/createrecipe" component={AddRecipeForm} />
-          <Route path="/editrecipe/:id" render= {() => <EditRecipeForm editRecipe={editRecipe}/>}/>
-          <Route path="/recipiepage/:id" render= {() => <RecipePage editRecipe={editRecipe}/>}/>
-          <PrivateRoute path="/protected" setX={setX} component={UserPage} />
-=======
       {showComponent ? <Loading call={() => setShowComponent(false)} /> : null}
       <Switch>
         <Route exact path="/" component={HomePage} />
@@ -69,7 +53,10 @@ function App() {
           render={() => <EditRecipeForm editRecipe={editRecipe} />}
         />
         <PrivateRoute path="/protected" setX={setX} component={UserPage} />
+<<<<<<< HEAD
 >>>>>>> d708ba6... Fixed file structure
+=======
+>>>>>>> f5dcb50... Fixed merge netlify issues
       </Switch>
       <Footer />
     </div>
