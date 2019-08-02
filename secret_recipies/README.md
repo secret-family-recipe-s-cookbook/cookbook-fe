@@ -1,18 +1,30 @@
 # cookbook-fe
 
-# Welcome to Secret Family Recipes Cookbook, [insert text]
+# Welcome to Secret Family Recipes Cookbook
 
-### This app allows [insert text].
+### This app allows a user to register and view all recipes entered into the site, search recipes, add/edit/delete recipes.
 
 ## Current Features:
 
--
+- User Registration
+- User Login
+- CRUD Functionality
+- Add recipes
+- Delete recipes
+- Edit recipes
+- Filter recipes
 
 ## Technologies Used
 
 - React
 - Redux
 - Router
+- Semantic-UI
+- Material-UI
+- Bootstrap
+- Styled-Components
+- Axios
+- React-Sound
 
 # Team
 
