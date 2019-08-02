@@ -22,17 +22,13 @@ class userPage extends Component {
                 "source_image": " " 
             }
         }
-        console.log('userPage props',this.props)
+       
     }
     componentDidMount(){
         this.props.fetchCard();
+        document.title = 'Secret Family Recipes - My Recipes';
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     if(prevProps.data.length !== this.props.data.length) {
-    //         this.props.fetchCard()
-    //     }
-    // }
     render() {
         let recipesToDisplay = [];
         if (this.props.filteredRecipes.length > 0) {
@@ -40,8 +36,8 @@ class userPage extends Component {
         }
         else {
             recipesToDisplay = this.props.data;
+            console.log('Prop: ',this.props.data);
         }
-        console.log('userPage props', this.props)
         return(
             <>
             <SearchForm />
@@ -52,7 +48,7 @@ class userPage extends Component {
                     </div>
                     <div className='no-recipe'>
                         <div>
-                        <Recipes data={recipesToDisplay} setX={this.props.setX} />
+                        <Link to={`/recipepage/${this.props.id}`}><Recipes data={recipesToDisplay} setX={this.props.setX} /></Link>
                         </div>
                     </div>
                 </div>

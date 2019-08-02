@@ -29,6 +29,10 @@ class AddRecipeForm extends Component {
         }
     }
 
+    componentDidMount(){
+        document.title = 'Secret Family Recipes - Create';
+    }
+
     editRecipe = editedRecipe => {
         const recipesCopy = [...this.state.recipes];
         const oldRecipe = recipesCopy.find(recipe => this.state.recipe.id === editedRecipe.id)
@@ -50,7 +54,6 @@ class AddRecipeForm extends Component {
 
       
       addRecipe = e => {
-          console.log(this.state.recipe)
           e.preventDefault()
           this.props.addRecipe(this.state.recipe)
           this.setState({
@@ -183,7 +186,6 @@ class AddRecipeForm extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log("state", state)
     return {
         data: state.cardReducer.data.data,
         fetching: state.cardReducer.fetching,

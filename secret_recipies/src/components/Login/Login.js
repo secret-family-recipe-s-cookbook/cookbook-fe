@@ -13,7 +13,6 @@ const Login = (props) => {
       });
       const changeHandler = event => {
         event.preventDefault();
-        console.log(event.target.value);
         setName({ ...name, [event.target.name]: event.target.value });
       };
     
@@ -25,10 +24,8 @@ const Login = (props) => {
         e.preventDefault();
         props.login(name.usernameoremail, name.password).then(res => {
           if(res) {
-            console.log('res',res)
             props.history.push('/protected');
           }
-          console.log(props.history)
           props.setIsModalVisible(false)
         });
       }
