@@ -87,7 +87,7 @@ class AddRecipeForm extends Component {
             <div className='create-recipe-form-header'>
             <i className="far fa-trash-alt trashIcon" />
             <h1>Create a Recipe</h1>
-            <form onSubmit={this.handleSubmit}><ButtonContainer type ="submit" className="create-recipe-submit">Add Recipe</ButtonContainer></form>           
+            <form onSubmit={this.handleSubmit}><ButtonContainer type ="submit" className="create-recipe-submit">Add Recipe</ButtonContainer></form>          
             </div>
             {/* <button>Add Recipe</button> */}
             <form onSubmit={this.handleSubmit}>

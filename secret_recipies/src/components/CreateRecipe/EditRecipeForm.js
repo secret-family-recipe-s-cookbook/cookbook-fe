@@ -3,11 +3,12 @@ import { updateRecipe, deleteRecipe } from "../../store/actions";
 import { ButtonContainer } from "../styled-components/Button";
 import styled from "styled-components";
 import {connect} from 'react-redux'
+import {NavLink} from 'react-router-dom'
 
 class EditRecipeForm extends Component {
     constructor(props){
         super(props)
-        this.setState = {
+        this.state = {
             recipe: this.props.editRecipe || {
                 "title":'',
                 "description":'',
@@ -40,7 +41,6 @@ class EditRecipeForm extends Component {
         event.preventDefault();
         this.setState({recipe: {...this.props.editRecipe, [event.target.name]: event.target.value} });
       };
-
      
     render() {
         
@@ -49,8 +49,8 @@ class EditRecipeForm extends Component {
             {/* <button>delete</button> */}
             <div className='create-recipe-form-header'>
             <i className="far fa-trash-alt trashIcon" onClick={()=> this.props.deleteRecipe(this.state.recipe.id)} />
-            <h1>Edit Recipe</h1>
-            <form onSubmit={this.handleSubmit}><ButtonContainer type ="submit" className="create-recipe-submit">Edit Recipe</ButtonContainer></form>           
+            <h1>Edit Recipe</h1>                                                                            
+            <form onSubmit={this.handleSubmit}><ButtonContainer type ="submit" className="create-recipe-submit">Edit Recipe</ButtonContainer><NavLink to='/protected'><ButtonContainer type ="submit" className="create-recipe-submit">Go back</ButtonContainer></NavLink></form>
             </div>
             {/* <button>Add Recipe</button> */}
             <form onSubmit={this.handleSubmit}>
