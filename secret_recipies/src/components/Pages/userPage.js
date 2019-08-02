@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Recipes from '../Cards/recipes';
 import { fetchCard } from '../../store/actions';
 import { connect } from 'react-redux';
 import { ButtonContainer } from "../styled-components/Button";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import SearchForm from '../SearchBar';
+
 
 class userPage extends Component {
     constructor(props) {
@@ -21,35 +22,43 @@ class userPage extends Component {
                 "bio": " ",
                 "source_image": " " 
             }
+            
         }
-       
+        console.log('data: ', this.state.data);
     }
+    
     componentDidMount(){
         this.props.fetchCard();
-        document.title = 'Secret Family Recipes - My Recipes';
     }
-
+    
     render() {
+        
         let recipesToDisplay = [];
         if (this.props.filteredRecipes.length > 0) {
             recipesToDisplay = this.props.filteredRecipes;
         }
         else {
             recipesToDisplay = this.props.data;
-            console.log('Prop: ',this.props.data);
+            
         }
+        
+        
+        
+        console.log('userPage props', this.props.data)
         return(
             <>
             <SearchForm />
                 <div className='user-page'>
                     <div className='userPageTitle'>       
                         <h1>My Recipes</h1>
-                        <Link to={'/createrecipe'}><ButtonContainer className="userPageCreateButton">Add Another Recipe</ButtonContainer></Link>
+            <NavLink to={'/createrecipe'}><ButtonContainer className="userPageCreateButton">Create a Recipe</ButtonContainer></NavLink>
                     </div>
                     <div className='no-recipe'>
-                        <div>
-                        <Link to={`/recipepage/${this.props.id}`}><Recipes data={recipesToDisplay} setX={this.props.setX} /></Link>
-                        </div>
+                        
+                        
+                        <Recipes data={recipesToDisplay} setX={this.props.setX} />
+                            
+                        
                     </div>
                 </div>
             </>

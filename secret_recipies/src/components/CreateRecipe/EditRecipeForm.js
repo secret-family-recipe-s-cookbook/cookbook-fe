@@ -7,7 +7,7 @@ import {connect} from 'react-redux'
 class EditRecipeForm extends Component {
     constructor(props){
         super(props)
-        this.state = {
+        this.setState = {
             recipe: this.props.editRecipe || {
                 "title":'',
                 "description":'',
@@ -43,6 +43,7 @@ class EditRecipeForm extends Component {
 
      
     render() {
+        
     return(
         <div className = "create-recipe-form">
             {/* <button>delete</button> */}
