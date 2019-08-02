@@ -18,14 +18,58 @@ font-weight: 900;
   text-transform: capitalize;
 }
 
+/* Search Bar */
+.searchbar {
+  height: 3rem;
+  background: #B59883;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar form {
+  display: flex;
+  width: 25rem;
+  justify-content: space-between;
+}
+
+.searchinput {
+  margin-right: 2rem;
+  height: 2rem;
+  width: 20rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.searchbutton {
+  background-color: #6E0000;
+  color: #fff;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  margin-left: 2rem;
+}
+
 /* Navbar Component Styling */
 .navbar {
+  width: 100%;
   display: flex;
   background: #A64747;
   color: white;
   justify-content: space-between;
   z-index: 5;
 }
+
+.navbar a {
+  color: white;
+  width:70%;
+}
+
+.navbar a h3{
+  color:white;
+}
+
 .userNavbar {
   display: flex;
   background: #A64747;
@@ -37,6 +81,8 @@ font-weight: 900;
 .navtitle {
   display: flex;
   align-items: center;
+  width: 90%;
+  text-align: center;
 }
 
 .home {
@@ -46,13 +92,16 @@ font-weight: 900;
 
 .title {
   flex-grow: 2;
-  margin-left: 2rem !important;
+  text-align:right;
   font-family: 'Handlee', cursive;
+  font-size:2.8rem;
+  padding-right:30px;
 }
 
 .signIn {
   margin-right: 2rem !important;
   font-family: 'Handlee', cursive;
+  font-size:2.8rem;
 }
 
 .signIn:hover {
@@ -60,7 +109,20 @@ font-weight: 900;
 }
 .signButton {
   display: flex;
+  justify-content:flex-end;
   align-items: center;
+  text-align:right;
+  width:30%;
+}
+
+.signButton div{
+  
+}
+.signButton a{
+  width:100px;
+}
+.signButton a:hover{
+  text-decoration: none;
 }
 
 .sticky {
@@ -74,13 +136,15 @@ font-weight: 900;
   margin-left: 2rem !important;
 }
 
-.navbar a {
+.userNavbar a{
   color: white;
+
+}
+.navbar a:hover{
+  text-decoration: none;
 }
 
-.userNavbar a {
-  color: white;
-}
+
 /* Footer Styling */
 .footer {
   display: flex;
@@ -88,6 +152,9 @@ font-weight: 900;
   color: white;
   font-family: 'Roboto', sans-serif;
   align-items: center;
+  height:50px;
+  /* position: absolute;
+  bottom: 0; */
 }
 
 .footer a {
@@ -174,15 +241,6 @@ font-weight: 900;
   font-size: 2.5rem;
 }
 
-.no-recipe {
-  display: flex;
-  width: auto;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: auto;
-}
-
 .no-recipe img {
   width: 20rem;
 }
@@ -259,6 +317,7 @@ font-weight: 900;
 .placeholder img{
   width: 18.75rem;
   height: 20rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .temp-cards {
@@ -284,10 +343,12 @@ font-weight: 900;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  
 }
 .placeholder-rotd img{
   width: 35rem;
   height: 25rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .rotd-text {
@@ -699,9 +760,12 @@ font-weight: 900;
 
 .sideTwo{
   width: 40%;
-  border: 3px solid #EFEFEF;
+  border: 4px dotted #EFEFEF;
   border-radius: 4px;
   margin-bottom: 2rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sideTwo h3{
@@ -772,17 +836,21 @@ font-weight: 900;
 .card-grid-view{
   display: inline-flex;
   flex-wrap: wrap;
-  width: 20%;
   justify-content: center;
-  padding: 10px 0 10px 0;
+  padding: 10px 10px 10px 0;
 }
 
 /* User Page Styling */
 .user-page {
-  height: 100vh;
-  padding: 5rem;
+  padding: 2rem;
 }
-
+.userPageTitle{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: baseline;
+  padding-bottom: 30px;
+}
 .user-page h1{
   font-weight: 600;
   font-size: 3rem;
@@ -819,11 +887,103 @@ font-weight: 900;
   min-width: 20rem;
   transition: all 0.3s ease-in;
   border-color: transparent;
+  border: none !important;
+}
+
+.recipeCard img{
+  max-height: 20rem;
 }
 
 .recipeCard:hover {
-  cursor: pointer;
   border: 0.04rem solid rgba(0, 0, 0, 0.2);
   box-shadow: 0px 5px 15px dimgray;
   transform: scale(1.025);
+}
+
+.cardIcons {
+  font-size: 2rem;
+}
+
+/* Recipe Page */
+
+.recipePage {
+  margin: auto !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+}
+
+.RP-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10vh !important;
+}
+
+.RP-top button {
+  width: 12rem;
+  height: 3rem;
+  border-radius: 10px;
+  border: none;
+  background: #6E0000;
+  color: white;
+  font-size: 1.75rem;
+  
+}
+
+.recipeInfo {
+  margin-bottom: 5vh !important;
+  
+}
+
+.RPinstructions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.RPbuttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.RPbuttons button {
+  height: 3rem;
+  width: 24.9%;
+  border-radius: 10px;
+  border: none;
+  background: #6E0000;
+  color: white;
+  font-size: 1.75rem;
+  
+}
+
+.RPimg-container {
+  display: flex;
+  justify-content: center;
+}
+
+.RPimg-container img {
+  width: 100%;
+  box-shadow: 1px 1px 10px #525050;
+}
+
+.infoarea {
+  height: 20rem;
+  background: #FFF3DB;
+  margin-bottom: 4rem !important;
+  margin-top: 2rem !important;
+  border: 1px solid black;
+  border-radius: 30px;
+}
+
+.instructions {
+  width: 8rem;
+  margin: 2rem auto !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }

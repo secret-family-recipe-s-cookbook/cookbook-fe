@@ -10,12 +10,31 @@ import Terms from './components/Pages/Terms';
 import Loading from './components/PreLoaders/Loading';
 import PrivateRoute from './Utillities/authRouter';
 import UserPage from './components/Pages/userPage';
+import RecipePage from './components/Pages/recipePAge';
 import Login from './components/Login/Login';
 import AddRecipeForm from './components/CreateRecipe/AddRecipeForm'
+import recipes from './components/Cards/recipes'
+import EditRecipeForm from './components/CreateRecipe/EditRecipeForm'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [showComponent, setShowComponent] = useState(false);
-  
+  const [editRecipe, setX] = useState({
+    "title":'',
+    "description":'',
+    "categories":'',
+    "prepTime":'',
+    "cookTime":'',
+    "servings":'',
+    "calories":'',
+    "recipe_image":'',
+    "ingredients":'',
+    "directions":'',
+    "Notes":'',
+    "source":'',
+    "bio":''
+ });
+ 
   function _onButtonClick() {
     setShowComponent(true);
   }
@@ -33,7 +52,9 @@ function App() {
           <Route path="/registration" component={Registration} />
           <Route path="/login" component={Login} />
           <Route path="/createrecipe" component={AddRecipeForm} />
-          <PrivateRoute path="/protected" component={UserPage} />
+          <Route path="/editrecipe/:id" render= {() => <EditRecipeForm editRecipe={editRecipe}/>}/>
+          <Route path="/recipiepage/:id" render= {() => <RecipePage />}/>
+          <PrivateRoute path="/protected" setX={setX} component={UserPage} />
       </Switch>
       <Footer />
     </div>

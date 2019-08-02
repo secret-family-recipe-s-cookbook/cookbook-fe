@@ -4,6 +4,7 @@ import { fetchCard } from '../../store/actions';
 import { connect } from 'react-redux';
 import { ButtonContainer } from "../styled-components/Button";
 import { Link } from 'react-router-dom';
+import SearchForm from '../SearchBar';
 
 class userPage extends Component {
     constructor(props) {
@@ -21,25 +22,33 @@ class userPage extends Component {
                 "source_image": " " 
             }
         }
+       
     }
     componentDidMount(){
         this.props.fetchCard();
+        document.title = 'Secret Family Recipes - My Recipes';
     }
+
     render() {
-        console.log('userPage props', this.props)
+        let recipesToDisplay = [];
+        if (this.props.filteredRecipes.length > 0) {
+            recipesToDisplay = this.props.filteredRecipes;
+        }
+        else {
+            recipesToDisplay = this.props.data;
+            console.log('Prop: ',this.props.data);
+        }
         return(
             <>
+            <SearchForm />
                 <div className='user-page'>
                     <div className='userPageTitle'>       
                         <h1>My Recipes</h1>
+                        <Link to={'/createrecipe'}><ButtonContainer className="userPageCreateButton">Add Another Recipe</ButtonContainer></Link>
                     </div>
                     <div className='no-recipe'>
                         <div>
-                            <img src={process.env.PUBLIC_URL + "/pan.svg"} alt='User Page Image' className='userPageLogo' />
-                        </div>
-                        <div>
-                        <Recipes data={this.props.data} />
-                            <Link to={'/createrecipe'}><ButtonContainer className="userPageCreateButton">Create a Recipe</ButtonContainer></Link>
+                        <Link to={`/recipepage/${this.props.id}`}><Recipes data={recipesToDisplay} setX={this.props.setX} /></Link>
                         </div>
                     </div>
                 </div>
@@ -51,6 +60,7 @@ class userPage extends Component {
 const mapStateToProps = state =>   ({
     data: state.cardReducer.data.data,
     fetching: state.cardReducer.fetching,
+    filteredRecipes: state.cardReducer.filteredRecipes,
     error: state.cardReducer.error
    })
   

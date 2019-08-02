@@ -19,7 +19,6 @@ function UserNavbar (props) {
 
     const closeLoginHandler2 = (e) => {
         window.scrollTo(0, 0);
-        console.log(e.key)
         if(e.key === 'Escape') {
         setIsModalVisible(false)
         }
