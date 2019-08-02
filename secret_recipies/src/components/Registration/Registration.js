@@ -17,7 +17,6 @@ const Registration = (props) => {
 
   const changeHandler = event => {
     event.preventDefault();
-    console.log(event.target.value);
     setUser({ ...user, [event.target.name]: event.target.value });
   };
 
@@ -30,7 +29,6 @@ const Registration = (props) => {
     // user.firstname, user.lastname, user.username, user.email, user.password, user.confirmPassword
     props.addUser(user)
     props.history.push('/protected');
-      console.log(props.history)
   }
   
 

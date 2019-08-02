@@ -24,30 +24,11 @@ class EditRecipeForm extends Component {
                 "bio":''
              }
         }
-        console.log('edit recipe props',this.props.editRecipe)
     }
 
-    // deleteRecipe = e => {
-    //     e.preventDefault()
-    //     this.this.props.deleteRecipe(this.props.recipe)
-    //     this.setState({
-    //         recipe: {
-    //             "title":"",
-    //             "description":"",
-    //             "categories":"",
-    //             "prepTime":"",
-    //             "cookTime":"",
-    //             "servings":"",
-    //             "calories":"",
-    //             "recipe_image":"",
-    //             "ingredients":"",
-    //             "directions":"",
-    //             "Notes":"",
-    //             "source":"",
-    //             "bio":""
-    //         }
-    //     })
-    // }
+    componentDidMount(){
+        document.title = 'Secret Family Recipes - Edit';
+    }
 
     handleSubmit = event => {
         event.preventDefault();
@@ -165,14 +146,5 @@ class EditRecipeForm extends Component {
     )
       }
 }
-
-// const mapStateToProps = state => {
-//     console.log("state", state)
-//     return {
-//         data: state.cardReducer.data.data,
-//         fetching: state.cardReducer.fetching,
-//         error:state.cardReducer.error
-//     }
-//    }
   
   export default connect(null,{updateRecipe, deleteRecipe}) (EditRecipeForm);

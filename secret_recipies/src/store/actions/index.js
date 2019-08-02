@@ -15,7 +15,6 @@ export const fetchCard = () =>dispatch => {
   axiosWithAuth()
   .get(`/recipes`,)
   .then(res => {
-    console.log('fetched recipes', res.data)
     dispatch({type:FETCH_SUCCESS, payload:res.data})
     recipesToFilter.push(res.data)
   })
@@ -30,11 +29,9 @@ export const ADD_START ="ADD_START";
 
 export const addRecipe = (index) => dispatch => {
   dispatch({ type: ADD_START });
-  console.log(index)
   axiosWithAuth()
   .post(`/recipes`, index)
   .then(res => {
-    console.log('added recipe', res.data)
     dispatch({type: FETCH_SUCCESS, payload: res.data})
     return true
   })
@@ -93,7 +90,6 @@ export const login = (usernameoremail, password) => dispatch => {
       .catch(res => {
 
         logout(callback => {
-          console.log(usernameoremail)
           alert(res);
         });
         dispatch({

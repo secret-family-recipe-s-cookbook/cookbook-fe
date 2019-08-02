@@ -10,6 +10,7 @@ import Terms from './components/Pages/Terms';
 import Loading from './components/PreLoaders/Loading';
 import PrivateRoute from './Utillities/authRouter';
 import UserPage from './components/Pages/userPage';
+import RecipePage from './components/Pages/recipePAge';
 import Login from './components/Login/Login';
 import AddRecipeForm from './components/CreateRecipe/AddRecipeForm'
 import recipes from './components/Cards/recipes'
@@ -38,8 +39,6 @@ function App() {
     setShowComponent(true);
   }
 
-  console.log('App.js editRecipe',editRecipe)
-
   return (
     <div className="App">
       <Navbar showLoading={_onButtonClick} />
@@ -54,6 +53,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/createrecipe" component={AddRecipeForm} />
           <Route path="/editrecipe/:id" render= {() => <EditRecipeForm editRecipe={editRecipe}/>}/>
+          <Route path="/recipiepage/:id" render= {() => <RecipePage />}/>
           <PrivateRoute path="/protected" setX={setX} component={UserPage} />
       </Switch>
       <Footer />

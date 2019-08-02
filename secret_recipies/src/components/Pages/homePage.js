@@ -10,9 +10,7 @@ function HomePage () {
         axios
             .get(`https://www.themealdb.com/api/json/v1/1/random.php`)
             .then(response => {
-                console.log("food of the day", response)
                 const feedMe = response.data.meals
-                console.log("this is food", feedMe)
                 setRecipeOfTheDay(feedMe)
             })
             .catch(err => {
@@ -40,18 +38,18 @@ function HomePage () {
                         <h3>Meatless Monday Recipes</h3>
                         <img src='https://i.imgur.com/xbAB1QK.jpg'/>
                         <p>
-                            Sometext here
+                        Try our Meatless Monday recipes! It’s a healthy alternative that the whole family can enjoy. You’ll never know the difference!
                         </p>
                     </div>
                     <div className='placeholder'>
                         <h3>4th of July Inspired Recipes</h3>
                         <img src='https://i.imgur.com/FAhghO2.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>4th of July is one of the most anticipated holidays of the year. Check out some great 4th of July inspired recipes.</p>
                     </div>
                     <div className='placeholder'>
                         <h3>Family Meal Ideas for Under $20</h3>
                         <img src='https://i.imgur.com/JCYh3vh.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>Family meals don’t have to be expensive. Here are some grea family meal ideas for under $20.</p>
                     </div>
                 </div>
             </div>
@@ -80,22 +78,22 @@ function HomePage () {
                     <div className='placeholder'>
                         <h3>Mesquite-Smoked Burger</h3>
                         <img src='https://i.imgur.com/UxIOIie.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>Family meals don’t have to be expensive. Here are some grea family meal ideas for under $20.</p>
                     </div>
                     <div className='placeholder'>
                         <h3>Grilled Chicen Skewers</h3>
                         <img src='https://i.imgur.com/cPDulux.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>Try our recipe for simple, yet delicious grilled chicken skewers. Easy to make. Fun to eat!</p>
                     </div>
                     <div className='placeholder'>
                         <h3>Southwest Babyback Ribs</h3>
                         <img src='https://i.imgur.com/lXUlSQF.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>You can never go wrong with these mouth-watering Southwest Babyback Ribs! Grab them while you can!</p>
                     </div>
                     <div className='placeholder'>
                         <h3>Grilled Corn on the Cob</h3>
                         <img src='https://i.imgur.com/ImbSC8X.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>For all my corn lovers! Here’s an amazing Grilled Corn on the Cob recipe.</p>
                     </div>
                 </div>
             </div>
@@ -106,22 +104,22 @@ function HomePage () {
                     <div className='placeholder'>
                         <h3>Uncle John's Lasagnafest</h3>
                         <img src='https://i.imgur.com/h3XJ5ON.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>Uncle John swears by his lasagna. So much that when he cooks it, we call it a lasagna fest. Try out his recipe and join in on the festivities!</p>
                     </div>
                     <div className='placeholder'>
                         <h3>Garlic and Herb Roasted Chicken</h3>
                         <img src='https://i.imgur.com/Nex1oyC.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>An amazingly juicy garlic and herb roasted chicken recipe. There’s never a bite left on the table</p>
                     </div>
                     <div className='placeholder'>
                         <h3>Glazed Pork Chops and Potatoes</h3>
                         <img src='https://i.imgur.com/bPPI11s.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>Can’t say enough about these glazed pork chops & sauteed potatoes. The flavors are out of this world!</p>
                     </div>
                     <div className='placeholder'>
                         <h3>Nester's Famous White Pizza</h3>
                         <img src='https://i.imgur.com/4S1igns.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>Everyone in the neighborhood wants a taste of Nester’s pizza! Papa John’s ain’t got nothin’ on Nester!</p>
                     </div>
                 </div>
             </div>
@@ -132,22 +130,22 @@ function HomePage () {
                     <div className='placeholder'>
                         <h3>Tyson Family's Lemonade</h3>
                         <img src='https://i.imgur.com/N4bOC7i.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>Summer isn’t summer without the Tyson’s family’s homemade lemonade. Freshly squeezed!</p>
                     </div>
                     <div className='placeholder'>
                         <h3>Strawberry Summer Splash</h3>
                         <img src='https://i.imgur.com/bvBJqQv.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>An amazing carbonated strawberry drink that’s light and refreshing. A must-recipe!</p>
                     </div>
                     <div className='placeholder'>
                         <h3>Tropical Pineapple Breeze</h3>
                         <img src='https://i.imgur.com/CMquNgi.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>A tropical-flavored drink that will take you right to the islands. Layers of tropical goodness.</p>
                     </div>
                     <div className='placeholder'>
                         <h3>Barry's Berry Smoothie</h3>
                         <img src='https://i.imgur.com/Dk9lwy3.jpg'/>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidididunt ut labore et dolore magna aliqua.</p>
+                        <p>Nothing’s better than Barry’s Berry Smoothie. Cool, refreshing, and delicious.</p>
                     </div>
                 </div>
             </div>

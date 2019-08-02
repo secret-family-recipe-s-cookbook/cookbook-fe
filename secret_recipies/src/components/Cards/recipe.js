@@ -4,15 +4,17 @@ import { NavLink } from 'react-router-dom'
 import { connect } from "react-redux";
 import { deleteRecipe } from "../../store/actions"
 
-const Recipe = props => {
-    console.log('recipe props',props)
-    
+const Recipe = props => {    
     const editRecipe = () => {
         props.setX(props.card)
     }
     
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    }
     return (
         <div className="card-grid-view">
+            <NavLink to={`/recipepage/${props.card.id}`}>
                 <Card className='recipeCard'>
                     <Image size ="medium" src={props.card.recipe_image} wrapped ui={false} />
                     <Card.Content>
@@ -27,16 +29,17 @@ const Recipe = props => {
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                        <NavLink to={`/editrecipe/${props.card.id}`}><i className="far fa-edit cardIcons" onClick={()=>editRecipe()} /></NavLink>
-                        <a onClick={() => props.deleteRecipe(props.card.id)}>
+                        <NavLink to={`/editrecipe/${props.card.id}`}><i className="far fa-edit cardIcons" onClick={()=>{scrollToTop(); return editRecipe();}} /></NavLink>
+                        <div onClick={() => {props.deleteRecipe(props.card.id); return window.location.href=window.location.href}}>
                             <i className="fas fa-trash-alt cardIcons"/>
-                        </a>
+                        </div>
                     </Card.Content>
                 </Card>
+            </NavLink>
          </div>
     )
 }
 
 
 
-export default connect(() => {}, {deleteRecipe}) (Recipe); 
+export default connect(null,{deleteRecipe})(Recipe); 
