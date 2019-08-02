@@ -1,10 +1,20 @@
 import React from 'react';
-import Recipie from './recipie';
+import UserRecipe from "./UserRecipe";
 
-const userRecipies = props => {
-    return(
-        <div className="recipieFilter">
-            {/* Create a function that will filter recipies by username */}
+const UserRecipes = props => {
+    if(!props.data) {
+return <h1>Loading Recipes</h1> 
+    } else {
+return (
+    // <div className='container'>
+        <div className='recipemap row'>
+            {props.data.map(card =>
+                <UserRecipe key={card.id} card={card} setX={props.setX} />
+                )}
         </div>
-    )
-}
+    // </div>
+)
+    }
+   
+};
+export default UserRecipes;

@@ -53,7 +53,7 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/createrecipe" component={AddRecipeForm} />
           <Route path="/editrecipe/:id" render= {() => <EditRecipeForm editRecipe={editRecipe}/>}/>
-          <Route path="/recipiepage/:id" render= {() => <RecipePage />}/>
+          <Route path="/recipiepage/:id" render= {() => <RecipePage editRecipe={editRecipe}/>}/>
           <PrivateRoute path="/protected" setX={setX} component={UserPage} />
       </Switch>
       <Footer />
