@@ -50,7 +50,7 @@ class userPage extends Component {
             <SearchForm />
                 <div className='user-page'>
                     <div className='userPageTitle'>       
-                        <h1>My Recipes</h1>
+                        <h1>All Recipes</h1>
             <NavLink to={'/createrecipe'}><ButtonContainer className="userPageCreateButton">Create a Recipe</ButtonContainer></NavLink>
                     </div>
                     <div className='no-recipe'>

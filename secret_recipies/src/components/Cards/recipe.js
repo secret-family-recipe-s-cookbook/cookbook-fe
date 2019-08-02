@@ -15,7 +15,7 @@ const Recipe = props => {
     }
     return (
         <div className="card-grid-view">
-            <NavLink to={`/recipepage/${props.card.id}`} >
+            {/* <NavLink to={`/recipepage/${props.card.id}`} > */}
                 <Card className='recipeCard'>
                     <Image size ="medium" src={props.card.recipe_image} wrapped ui={false} />
                     <Card.Content>
@@ -32,11 +32,11 @@ const Recipe = props => {
                     <Card.Content extra>
                         <NavLink to={`/editrecipe/${props.card.id}`}><i className="far fa-edit cardIcons" onClick={()=>{scrollToTop(); return editRecipe();}} /></NavLink>
                         <div onClick={() => {props.deleteRecipe(props.card.id); return window.location.href=window.location.href}}>
-                            <i className="fas fa-trash-alt cardIcons"/>
+                            <a><i className="fas fa-trash-alt cardIcons"/></a>
                         </div>
                     </Card.Content>
                 </Card>
-            </NavLink>
+            {/* </NavLink> */}
          </div>
     )
 }
